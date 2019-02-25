@@ -1,0 +1,32 @@
+.title{
+    width: 91%;
+    height: 16vh;
+    padding-left: 8vw;
+    padding-top: 8vh;
+    font-size: 40px;
+    font-weight: 500;
+}
+.content{
+    padding-top: 3vh;
+    height: 50vh;
+    width : 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.avatar-image{
+    height: 16vw;
+    width: 16vw;
+}
+.image-block{
+    height: 16vw;
+    width: 16vw;
+    margin: 0 40px;
+}
+.description{
+    width: 68vw;
+    padding: 0 5vw;
+    height: 16vw;
+    font-size: 22px;
+    font-weight: 300;
+}
