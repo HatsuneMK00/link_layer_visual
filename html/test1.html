@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../js/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../css/dialog.css">
+    <script src="../js/dialog.js"></script>
+</head>
+<body>
+<h1>test</h1>
+<div id="dialog-form" title="Create Appointment">
+    <p> this is my test </p>
+</div>
+<input type="button" id="create-appt" value="test"/>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function() {
+            $("#dialog-form").dialog({
+                autoOpen: false,
+                maxWidth:600,
+                maxHeight: 500,
+                width: 600,
+                height: 500,
+                modal: true,
+                buttons: {
+                    "Create": function() {
+                        $(this).dialog("close");
+                    },
+                    Cancel: function() {
+                        $(this).dialog("close");
+                    }
+                },
+                close: function() {
+                }
+            });
+        });
+
+        $("#create-appt")
+            .button()
+            .click(function() {
+                $("#dialog-form").dialog("open");
+            });
+    });
+</script>
+
+</body>
+</html>
