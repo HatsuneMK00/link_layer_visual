@@ -26,6 +26,15 @@
     <p>右侧是传输过程的伪代码</p>
 </div>
 
+<div id="question" title="提问" style="font-size: 21px;line-height: 150%;">
+    <p>乌托邦式的无错信道在现实中存在吗</p>
+    <form>
+        <input type="radio" id="selection1" value="我是选项1" name="ques">存在，虽然我不知道在哪<br>
+        <input type="radio" id="selection2" value="我是选项2" name="ques">不存在，这只是用来思考的理想化模型<br>
+        <input type="radio" id="selection3" value="我是选项3" name="ques">不知道，万一存在呢<br>
+    </form>
+</div>
+
 <div class="top-bar">
     <h1>乌托邦式的单工协议</h1>
 </div>
@@ -119,7 +128,7 @@
                                 $("#blocks5").animate({bottom:'420px'},500,function(){
                                     $("#blocks6").animate({bottom:'420px'},500,function(){
                                         $("#blocks7").animate({bottom:'420px'},500,function(){
-                                            $("#blocks8").animate({bottom:'420px'},500
+                                            $("#blocks8").animate({bottom:'420px'},500,show_question()
                                             );
                                         });
                                     });

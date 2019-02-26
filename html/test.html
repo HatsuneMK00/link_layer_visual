@@ -13,35 +13,40 @@
 <h1>test</h1>
 <div id="dialog-form" title="Create Appointment">
     <p> this is my test </p>
+    <form>
+        <input type="radio" id="selection1" value="我是选项1" name="ques">我是选项1<br>
+        <input type="radio" id="selection2" value="我是选项2" name="ques" checked>我是选项2<br>
+        <input type="radio" id="selection3" value="我是选项3" name="ques">我是选项3<br>
+    </form>
 </div>
 <input type="button" id="create-appt" value="test"/>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(function() {
+        $(function () {
             $("#dialog-form").dialog({
                 autoOpen: false,
-                maxWidth:600,
+                maxWidth: 600,
                 maxHeight: 500,
                 width: 600,
                 height: 500,
                 modal: true,
                 buttons: {
-                    "Create": function() {
-                        $(this).dialog("close");
-                    },
-                    Cancel: function() {
-                        $(this).dialog("close");
+                    "确定": function () {
+                        if (document.getElementById("selection2").checked != true) {
+                            $(this).after("wrong")
+                        }
+                        else {
+                            $(this).dialog("close")
+                        }
                     }
-                },
-                close: function() {
                 }
             });
         });
 
         $("#create-appt")
             .button()
-            .click(function() {
+            .click(function () {
                 $("#dialog-form").dialog("open");
             });
     });

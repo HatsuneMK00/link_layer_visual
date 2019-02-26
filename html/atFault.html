@@ -14,8 +14,26 @@
     <script src="./../js/linkLayerWidget.js"></script>
     <script src="../js/atFault.js"></script>
 
+    <link rel="stylesheet" href="../css/dialog.css">
+    <link rel="stylesheet" href="../js/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../js/dialog.js"></script>
+    <script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 </head>
 <body>
+<div id="question" title="提问" style="font-size: 21px;line-height: 150%;">
+    <p>假设正常传输到5号帧时，5号帧在传输过程中丢失了，之后会发生什么？</p>
+    <form>
+        <input type="radio" id="selection1" value="我是选项1" name="ques">发送方立刻重传五号帧<br>
+        <input type="radio" id="selection2" value="我是选项2" name="ques">发送方等待计时器超时后重传五号帧<br>
+        <input type="radio" id="selection3" value="我是选项3" name="ques">发送方不管五号帧继续往下发<br>
+    </form>
+</div>
+<div id="dialog_content" title="说明" style="font-size: 21px;line-height: 150%">
+    <p>在有错信道停等协议传输中，三号帧在传输过程中丢失，触发计时器超时，发送方重传该帧</p>
+    <p>七号帧的确认帧在传输过程中丢失，触发计时器超时，发送方重传该帧。</p>
+    <p>从下向上发的砖头代表“帧”，从上向下发的 √ 表示“确认帧”。</p>
+    <p>右侧是传输过程的伪代码</p>
+</div>
 <div class="top-bar">
     <h1>有错信道上的单工停-等协议</h1>
 </div>
