@@ -13,8 +13,29 @@
     <script src="./../js/common.js"></script>
     <script src="./../js/linkLayerWidget.js"></script>
     <script src="../js/slidingWindow.js"></script>
+
+    <link rel="stylesheet" href="../css/dialog.css">
+    <link rel="stylesheet" href="../js/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../js/dialog.js"></script>
+    <script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 </head>
 <body>
+<div id="question" title="提问" style="font-size: 21px;line-height: 150%;">
+    <p>这个模型与之前看到的有错信道的停等协议一样吗？<br></p>
+    <form>
+        <input type="radio" id="selection1" value="我是选项1" name="ques">显然没有什么区别<br>
+        <input type="radio" id="selection2" value="我是选项2" name="ques">有区别，这个协议将思想抽象为了滑动窗口的思想，更利于协议的进一步发展与完善<br>
+        <input type="radio" id="selection3" value="我是选项3" name="ques">有区别，名字不一样<br><br>
+    </form>
+    <p id="error" style="color: red;font-size: 18px"></p>
+</div>
+
+<div id="dialog_content" title="说明" style="font-size: 21px;line-height: 150%">
+    <p>在有错信道停等协议传输中，三号帧在传输过程中丢失，触发计时器超时，发送方重传该帧</p>
+    <p>七号帧的确认帧在传输过程中丢失，触发计时器超时，发送方重传该帧。</p>
+    <p>从下向上发的砖头代表“帧”，从上向下发的 √ 表示“确认帧”。</p>
+    <p>右侧是传输过程的伪代码</p>
+</div>
 <div class="top-bar">
     <h1>一位滑动窗口协议</h1>
 </div>
@@ -38,7 +59,7 @@
     <img id="blocks8" class="blocks" src="../images/blocks.png">
     <img id="newBlocks2" class="blocks" src="../images/blocks.png">
     <img id="newBlocks6" class="blocks" src="../images/blocks.png">
-        
+
     <img id="affirm0" class="affirm" src="../images/affirm.png">
     <img id="affirm1" class="affirm" src="../images/affirm.png">
     <img id="affirm2" class="affirm" src="../images/affirm.png">
@@ -54,7 +75,7 @@
     <img id="newAffirm6" class="affirm" src="../images/affirm.png">
     <img id="window0" class="window" src="../images/window1.png">
     <img id="window1" class="window" src="../images/window1.png">
-    
+
     </div>
 <div id="actions-hide" class="panel-hide"><img class="rotateRight" src="./../images/arrow_white_right.png" alt="&gt;" ></div>
 

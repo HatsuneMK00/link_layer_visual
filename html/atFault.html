@@ -21,12 +21,13 @@
 </head>
 <body>
 <div id="question" title="提问" style="font-size: 21px;line-height: 150%;">
-    <p>假设正常传输到5号帧时，5号帧在传输过程中丢失了，之后会发生什么？</p>
+    <p>假设正常传输到5号帧时，5号帧在传输过程中丢失了，之后会发生什么？<br></p>
     <form>
         <input type="radio" id="selection1" value="我是选项1" name="ques">发送方立刻重传五号帧<br>
         <input type="radio" id="selection2" value="我是选项2" name="ques">发送方等待计时器超时后重传五号帧<br>
-        <input type="radio" id="selection3" value="我是选项3" name="ques">发送方不管五号帧继续往下发<br>
+        <input type="radio" id="selection3" value="我是选项3" name="ques">发送方不管五号帧继续往下发<br><br>
     </form>
+    <p id="error" style="color: red;font-size: 18px"></p>
 </div>
 <div id="dialog_content" title="说明" style="font-size: 21px;line-height: 150%">
     <p>在有错信道停等协议传输中，三号帧在传输过程中丢失，触发计时器超时，发送方重传该帧</p>

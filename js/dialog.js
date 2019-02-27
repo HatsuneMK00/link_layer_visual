@@ -2,21 +2,21 @@ $(document).ready(function () {
     $("#dialog_content").dialog({
         dialogClass: "no-close",
         autoOpen: true,
-        maxWidth:800,
+        maxWidth: 800,
         maxHeight: 350,
         width: 800,
         height: 350,
         modal: true,
         buttons: {
-            "OK": function() {
+            "OK": function () {
                 $(this).dialog("close");
             }
         }
     });
     $("#question").dialog({
-        dialogClass:"no-close",
-        autoOpen:false,
-        maxWidth:800,
+        dialogClass: "no-close",
+        autoOpen: false,
+        maxWidth: 800,
         maxHeight: 350,
         width: 800,
         height: 350,
@@ -24,15 +24,23 @@ $(document).ready(function () {
         buttons: {
             "确定": function () {
                 if (document.getElementById("selection2").checked != true) {
-                    $(this).after("wrong")
+                    $("#error").text("wrong");
+                    $("#error").css("color", "red");
                 }
                 else {
-                    $(this).dialog("close")
+                    $("#error").text("Congratulation!!");
+                    $("#error").css("color", "blue");
+                    setTimeout("close_dialog()", 1000);
                 }
             }
         }
     })
 });
+
 function show_question() {
     $("#question").dialog("open")
+}
+
+function close_dialog() {
+    $("#question").dialog("close")
 }

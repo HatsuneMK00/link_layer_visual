@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择重传协议</title>
+    <link rel="stylesheet" type="text/css" href="./../css/common.css">
+    <link rel="stylesheet" type="text/css" href="./../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!--js-->
+    <script src="./../js/jquery-3.3.1.min.js"></script>
+
+    <script src="./../js/common.js"></script>
+    <script src="./../js/linkLayerWidget.js"></script>
+    <script src="../js/selective_repeat.js"></script>
+</head>
+<body>
+<div class="top-bar">
+    <h1>选择重传协议</h1>
+</div>
+<div id="box">
+    <img id="program-dog" class="program-dog" src="../images/program-dog.png">
+    <img id="program-monkey" class="program-monkey" src="../images/program-monkey.png">
+    <img id="bottom0" class="bottom" src="../images/bottom.png">
+    <img id="bottom1" class="bottom" src="../images/bottom.png">
+    <img id="blocks0" class="blocks" src="../images/blocks.png">
+    <img id="blocks1" class="blocks" src="../images/blocks.png">
+    <img id="blocks2" class="blocks" src="../images/blocks.png">
+    <img id="blocks3" class="blocks" src="../images/blocks.png">
+    <img id="blocks4" class="blocks" src="../images/blocks.png">
+    <img id="blocks5" class="blocks" src="../images/blocks.png">
+    <img id="blocks6" class="blocks" src="../images/blocks.png">
+    <img id="blocks7" class="blocks" src="../images/blocks.png">
+    <img id="blocks8" class="blocks" src="../images/blocks.png">
+    <img id="newBlocks2" class="new-blocks" src="../images/blocks.png">
+    <img id="newBlocks6" class="new-blocks" src="../images/blocks.png">
+    <img id="newBlocks3" class="new-blocks" src="../images/blocks.png">
+    <img id="newBlocks4" class="new-blocks" src="../images/blocks.png">
+    <img id="newBlocks7" class="new-blocks" src="../images/blocks.png">
+    <img id="newBlocks8" class="new-blocks" src="../images/blocks.png">
+        
+    <img id="affirm0" class="affirm" src="../images/affirm.png">
+    <img id="affirm1" class="affirm" src="../images/affirm.png">
+    <img id="affirm2" class="affirm" src="../images/affirm.png">
+    <img id="affirm3" class="affirm" src="../images/affirm.png">
+    <img id="affirm4" class="affirm" src="../images/affirm.png">
+    <img id="affirm5" class="affirm" src="../images/affirm.png">
+    <img id="affirm6" class="affirm" src="../images/affirm.png">
+    <img id="affirm7" class="affirm" src="../images/affirm.png">
+    <img id="affirm8" class="affirm" src="../images/affirm.png">
+    <img id="timer0" class="timer" src="../images/quitTimer.jpg">
+    <img id="timer1" class="timer" src="../images/timer.jpg">
+    <img id="timer2" class="timer" src="../images/timer.jpg">
+    <img id="newAffirm11" class="affirm" src="../images/affirm.png">
+    <img id="newAffirm12" class="affirm" src="../images/affirm.png">
+    <img id="newAffirm2" class="affirm" src="../images/affirm.png">
+    <img id="newAffirm3" class="affirm" src="../images/affirm.png">
+    <img id="newAffirm4" class="affirm" src="../images/affirm.png">
+    <img id="newAffirm5" class="affirm" src="../images/affirm.png">
+    <img id="newAffirm51" class="affirm" src="../images/affirm.png">
+    <img id="newAffirm52" class="affirm" src="../images/affirm.png">
+    <img id="newAffirm6" class="affirm" src="../images/affirm.png">
+    <img id="newAffirm7" class="affirm" src="../images/affirm.png">
+    <img id="newAffirm8" class="affirm" src="../images/affirm.png">
+    
+    <img id="window1" class="window" src="../images/window1.png">
+    <img id="no1" class="no" src="../images/no.png">
+    <img id="no2" class="no" src="../images/no.png">
+    
+    <img id="lost" class="lost" src="../images/lost.jpg">
+    </div>
+<div id="actions" class="panel">
+    <p id="selective_repeat" onclick=selective_repeat()>创建</p>
+</div>
+<div id="actions-hide" class="panel-hide"><img class="rotateRight" src="./../images/arrow_white_right.png" alt="&gt;" ></div>
+
+<div class="receive">
+    <div id="status_r" class="panel status status_r"><p></p></div>
+    <div id="status-hide_r" class="panel-hide status-hide status-hide_r"><img src="./../images/arrow_black_right.png" alt="&gt;" class="rotateRight"></div>
+    <!--伪代码部分-->
+    <div id="codetrace_r"class="panel codetrace codetrace_r">
+        <p id="code11" style="padding-top: 5px;">while(等待事件){</p>
+        <p id="code12">&nbsp;&nbsp;if( 帧到达 ）</p>
+        <p id="code13">&nbsp;&nbsp;&nbsp;&nbsp;if( 该帧为期望接收的帧 )</p>
+        <p id="code14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接收该帧</p>
+        <p id="code15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将缓存中与其连续的帧排序后交给网络层</p>
+        <p id="code16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将窗口下限移至第一个未接收的帧处</p>
+        <p id="code17">&nbsp;&nbsp;&nbsp;&nbsp;else if ( 该帧序号落在接收窗口内 )</p>
+        <p id="code18">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;缓存该帧</p>
+        <p id="code19"style="padding-bottom: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;发送序号为窗口下限序号-1帧的确认帧</p>
+    </div>
+    <div id="codetrace-hide_r" class="panel-hide codetrace-hide codetrace-hide_r">
+        <img src="./../images/arrow_white_right.png" alt="&gt;" class="rotateRight"></div>
+</div>
+
+
+<div class="send">
+    <div id="status" class="panel status status_s"><p></p></div>
+    <div id="status-hide" class="panel-hide status-hide status-hide_s"><img src="./../images/arrow_black_right.png"></div>
+    <!--伪代码部分-->
+    <div id="codetrace" class="panel codetrace codetrace_s">
+        <p id="code1" style="padding-top: 5px;">do{</p>
+        <p id="code2">&nbsp;&nbsp;依次发送窗口内所有未发送的帧</p>
+        <p id="code3">&nbsp;&nbsp;为每个帧设定计时器</p>
+        <p id="code4">&nbsp;&nbsp;if（ 规定时间内收到期望的确认帧 )</p>
+        <p id="code5">&nbsp;&nbsp;&nbsp;&nbsp;释放确认帧所占缓冲区，滑动发送窗口</p>
+        <p id="code6">&nbsp;&nbsp;&nbsp;&nbsp;停止窗口外帧的计时器</p>
+        <p id="code8">&nbsp;&nbsp;else if ( 期望帧的计时器超时 ) </p>
+        <p id="code9">&nbsp;&nbsp;&nbsp;&nbsp;重发超时的计时器对应的帧,并重设计时器</p>
+        <p id="code10" style="padding-bottom: 10px;">}while ( 还有未传输成功的帧 )</p>
+    </div>
+    <div id="codetrace-hide" class="panel-hide codetrace-hide codetrace-hide_s">
+        <img src="./../images/arrow_white_right.png"></div>
+</div>
+
+<div class="left-bar"></div>
+<div class="right-bar"></div>
+<div class="bottom-bar" id="bottom-bar"><br/></div>
+<div id="media-controls">
+    <span id="go-to-beginning" class="media-control-button" title="回到初始状态" onclick="goToBeginning()"><img src="./../images/goToBeginning.png" alt="回到初始状态"></span>
+    <span id="previous" class="media-control-button" title="上一步" onclick="stepBackward()"><img src="./../images/prevFrame.png" alt="上一步"></span>
+    <span id="pause" class="media-control-button" title="暂停" onclick="pause()"><img src="./../images/pause.png" alt="暂停"></span>
+    <span id="play" class="media-control-button" title="开始" onclick="play()" style="display: none;"><img src="./../images/play.png" alt="开始"></span>
+    <span id="next" class="media-control-button" title="下一步" onclick="stepForward()"><img src="./../images/nextFrame.png" alt="下一步"></span>
+    <span id="go-to-end" class="media-control-button" title="直接显示结束状态" onclick="goToEnd()"><img src="./../images/goToEnd.png" alt="直接显示结束状态"></span>
+</div>
+
+
+<script type="text/javascript">
+    var ly;
+    $(function() {
+        ly = new linkLayerWidget();
+        ly.init();
+    });
+
+    function selective_repeat() {
+        if(isPlaying) { stop(); }
+        setTimeout( function() {
+            if ((mode=="exploration")&&ly.selective_repeat()) {
+                triggerRightPanels();
+                isPlaying = true;
+            }
+        }, 500);
+    }
+</script>
+
+</body>
+</html>

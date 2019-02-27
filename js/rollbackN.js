@@ -69,7 +69,8 @@ $(document).ready(function(){
           $("#affirm8").toggle(0).animate({top:'420px'},2000).delay(1000).animate({bottom:'-=50px',opacity:0},500);
       }).delay(2500).animate({bottom:'+=50px',opacity:0},500);
       $("#newBlocks8").delay(23200).fadeIn(250).animate({bottom:'420px'},2000,function(){$("#newAffirm8").delay(250).toggle(0).animate({top:'420px'},2000);});
-      
+      setTimeout("show_question()",23500);
+
 /***********************************window move***********************************/
       var win = $("#window1");
       win.delay(5300);

@@ -71,6 +71,9 @@ var timer = $("#timer");
       $("#blocks8").animate({bottom:'420px'},1000);
       $("#affirm8").delay(27250).toggle(0);
       $("#affirm8").animate({top:'420px'},1000);
+      setTimeout("show_question()",28260);
+
+
       
       
 /*************************************************************************/
@@ -92,4 +95,4 @@ var timer = $("#timer");
 //          });
 //      });
     });
-});            
+});

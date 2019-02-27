@@ -69,6 +69,7 @@ $(document).ready(function(){
       $("#blocks8").animate({bottom:'420px'},1000);
       $("#affirm8").delay(27250).toggle(0);
       $("#affirm8").animate({top:'420px'},1000);
+      setTimeout("show_question()",28000);
       
 /***********************************add***********************************/
 //      $("#window1").queue(function () {

@@ -20,6 +20,15 @@
 
 </head>
 <body>
+<div id="question" title="提问" style="font-size: 21px;line-height: 150%;">
+    <p>这个模型与之前看到的乌托邦式的模型有区别吗<br></p>
+    <form>
+        <input type="radio" id="selection1" value="我是选项1" name="ques">没有任何区别<br>
+        <input type="radio" id="selection2" value="我是选项2" name="ques">因为信道不再保证无错，所以接收方回传了确认帧，只不过没有出现错误所以看起来两个差不多<br>
+        <input type="radio" id="selection3" value="我是选项3" name="ques">多了个确认帧，但实际上没区别<br><br>
+    </form>
+    <p id="error" style="color: red;font-size: 18px"></p>
+</div>
 <div id="dialog_content" title="说明" style="font-size: 21px;line-height: 150%">
     <p>下面这个动画由于是在无错信道上传输，因此不会发生任何错误。</p>
     <p>从下向上发的砖头代表“帧”，从上向下发的 √ 表示“确认帧”。</p>

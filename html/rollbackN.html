@@ -19,6 +19,15 @@
     <script src="../js/dialog.js"></script>
     <script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 </head>
+<div id="question" title="提问" style="font-size: 21px;line-height: 150%;">
+    <p>动画中七号帧的确认帧丢失，当发送方收到八号帧的确认帧时，发送方的发送窗口的下界应该在几号帧的位置？<br></p>
+    <form>
+        <input type="radio" id="selection1" value="我是选项1" name="ques">八号帧<br>
+        <input type="radio" id="selection2" value="我是选项2" name="ques">七号帧<br>
+        <input type="radio" id="selection3" value="我是选项3" name="ques">九号帧<br><br>
+    </form>
+    <p id="error" style="font-size: 18px"></p>
+</div>
 <body>
 <div id="dialog_content" title="说明" style="font-size: 21px;line-height: 150%">
     <p>在有错信道回退N协议中，三号帧在传输过程中丢失，触发计时器超时，导致发送方重传3,4,5三个帧</p>
