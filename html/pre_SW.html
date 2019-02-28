@@ -2,25 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>乌托邦式的单工协议</title>
+    <title>一位滑动窗口协议</title>
     <link rel="stylesheet" type="text/css" href="./../css/common.css">
     <link rel="stylesheet" type="text/css" href="./../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style-prepage.css">
 
     <!--js-->
     <script src="./../js/jquery-3.3.1.min.js"></script>
 
     <script src="./../js/common.js"></script>
     <script src="./../js/linkLayerWidget.js"></script>
-    <script src="../js/atFault.js"></script>
+    <script src="../js/slidingWindow.js"></script>
+
+    <link rel="stylesheet" href="../css/dialog.css">
+    <link rel="stylesheet" href="../js/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../js/dialog.js"></script>
+    <script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../css/style-prepage.css">
 
 </head>
 <body id="body">
 <div class="top-bar">
 </div>
 <div class="title">
-    <p>乌托邦式的单工协议</p>
+    <p>一位滑动窗口协议</p>
 </div>
 <div class="content">
     <div class="image-block-left">
@@ -44,23 +49,26 @@
     <div class="dialog-block-monkey">
         <img src="../images/dialog-r.png" style="height: 40vh; width: 42vw">
         <p id="dia_mon_0" class="dialog-text-monkey">
-            由于一些原因，虽然我们身处异地，但是我需要给你送"砖头"。
+            这第四次传输"砖头"，好像信道本身没有什么变化，但上级说之后会要求我们提高效率，让我们先做起准备。
         </p>
         <p id="dia_mon_1" class="dialog-text-monkey" hidden>
-            没错，而且可能你很难相信，但是只要出错了我们就会失业了。
+            咱们换个思路，我不再每次只发送一个帧了。我会维护一个"发送窗口"，每次我只发在发送窗口里的"砖头"，而且不等你的确认帧了，你一个一个收就行。
         </p>
         <p id="dia_mon_2" class="dialog-text-monkey" hidden>
-            没关系，第一次送，有人给我们确保了一个绝对不会出错的完美"路线"，你只管放心收好传过来的"砖头"就行了。
+            行，收到你的"确认"之后我再移动我的发送窗口，发之后的"砖头",在收到之前我都会等你的。
         </p>
     </div>
 
     <div class="dialog-block-dog">
         <img src="../images/dialog.png" style="height: 40vh; width: 42vw">
         <p id="dia_dog_0" class="dialog-text-dog" hidden>
-            what?送"砖头"???
+            天哪，这要怎么办，有什么办法能发的更快吗？
         </p>
         <p id="dia_dog_1" class="dialog-text-dog" hidden>
-            好吧。但是怎么保证不会有失误啊，感觉很困难诶。
+            但是你也不要发的太快了，咱们提前商量好你的"发送窗口"的大小，不然我收不过来。这次"发送窗口"就先定为1，咱们练练手。
+        </p>
+        <p id="dia_dog_2" class="dialog-text-dog" hidden>
+            好。那咱们就开始吧！
         </p>
     </div>
 </div>
@@ -85,7 +93,10 @@
             $("#dia_mon_1").fadeOut();
             $("#dia_mon_2").fadeIn();
         }if (flag == 4) {
-            window.location.replace("beginning.html");
+            $("#dia_dog_1").fadeOut();
+            $("#dia_dog_2").fadeIn();
+        }if (flag == 5) {
+            window.location.replace("slidingWindow.html");
         }
 
         flag++;
