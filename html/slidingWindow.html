@@ -20,6 +20,7 @@
     <script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 </head>
 <body>
+<body>
 <div id="question" title="提问" style="font-size: 21px;line-height: 150%;">
     <p>这个模型与之前看到的有错信道的停等协议一样吗？<br></p>
     <form>
@@ -31,7 +32,7 @@
 </div>
 
 <div id="dialog_content" title="说明" style="font-size: 21px;line-height: 150%">
-    <p>在一位滑动窗口协议中，发送方和接收方的</p>
+    <p>在一位滑动窗口协议中，发送方和接收方的窗口大小均为1。发送方只能发送在窗口内的帧，接收方只接受在窗口内的帧。</p>
     <p>在这个协议传输中，三号帧在传输过程中丢失，触发计时器超时，发送方重传该帧</p>
     <p>七号帧的确认帧在传输过程中丢失，触发计时器超时，发送方重传该帧。</p>
     <p>从下向上发的砖头代表“帧”，从上向下发的 √ 表示“确认帧”。</p>
@@ -44,7 +45,7 @@
 <div id="actions" class="panel">
     <p id="SlidingWindow" onclick=SlidingWindow()>创建</p>
 </div>
-    <div id="box">
+<div id="box">
     <img id="program-dog" class="program-dog" src="../images/program-dog.png">
     <img id="program-monkey" class="program-monkey" src="../images/program-monkey.png">
     <img id="bottom0" class="bottom" src="../images/bottom.png">
@@ -77,7 +78,12 @@
     <img id="window0" class="window" src="../images/window1.png">
     <img id="window1" class="window" src="../images/window1.png">
 
-    </div>
+    <img id="no1" class="no" src="../images/no.png">
+    <img id="no2" class="no" src="../images/no.png">
+
+    <img id="lost" class="lost" src="../images/lost.jpg">
+
+</div>
 <div id="actions-hide" class="panel-hide"><img class="rotateRight" src="./../images/arrow_white_right.png" alt="&gt;" ></div>
 
 <div class="receive">
@@ -88,9 +94,8 @@
         <p id="code11" style="padding-top: 5px;">while(等待事件){</p>
         <p id="code12">&nbsp;&nbsp;if( 帧到达 ）</p>
         <p id="code13">&nbsp;&nbsp;&nbsp;&nbsp;if( 该帧为期望接收的帧 )</p>
-        <p id="code14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接收该帧 i++</p>
-        <p id="code15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将其提交给网络层</p>
-        <p id="code16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将窗口下限移至第一个未接收的帧处</p>
+        <p id="code14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接收该帧,提交给网络层,i++</p>
+        <p id="code16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;滑动接收窗口</p>
         <p id="code17"style="padding-bottom: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;发送序号为窗口下限序号-1帧的确认帧</p>
     </div>
     <div id="codetrace-hide_r" class="panel-hide codetrace-hide codetrace-hide_r">
@@ -104,11 +109,10 @@
     <!--伪代码部分-->
     <div id="codetrace" class="panel codetrace codetrace_s">
         <p id="code1" style="padding-top: 5px;">do{</p>
-        <p id="code2">&nbsp;&nbsp;依次发送窗口内所有的帧</p>
+        <p id="code2">&nbsp;&nbsp;发送第 i 帧</p>
         <p id="code3">&nbsp;&nbsp;为每个帧设定计时器</p>
-        <p id="code4">&nbsp;&nbsp;if（ 规定时间内收到期望的确认帧 )</p>
-        <p id="code5">&nbsp;&nbsp;&nbsp;&nbsp;发送窗口滑动至该帧后</p>
-        <p id="code6">&nbsp;&nbsp;&nbsp;&nbsp;i++ 停止窗口外帧的计时器</p>
+        <p id="code4">&nbsp;&nbsp;if（ 收到期望的确认帧 && 未超时 )</p>
+        <p id="code5">&nbsp;&nbsp;&nbsp;&nbsp;滑动发送窗口，i++</p>
         <p id="code7">&nbsp;&nbsp;清空计时器 </p>
         <p id="code8" style="padding-bottom: 10px;">}while ( 还需继续发送帧 )</p>
     </div>

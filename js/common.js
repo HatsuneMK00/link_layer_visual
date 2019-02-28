@@ -14,6 +14,7 @@ var isStatusOpen_r = false;
 var isCodetraceOpen_r = false;
 var isCodetraceOpen = false;
 
+
 // 翻转箭头，并掩藏/显示代码/创建框
 function showActionsPanel() {
     if (!isActionsOpen) {
@@ -197,23 +198,28 @@ function isAtEnd(){
     return(ly.getCurrentIteration()==(ly.getTotalIteration()-1));
 }
 function pause(){
+    var myVideo = document.getElementById("video");//add
     if(isPlaying){
         isPaused = true;
         ly.pause();
+        myVideo.pause();//add
         $('#play').show();
         $('#pause').hide();
     }
 }
 function play(){
+    var myVideo = document.getElementById("video");//add
     if(isPlaying){
         isPaused=false;
         $('#pause').show();
         $('#play').hide();
         if(isAtEnd()){
             ly.replay();
+            myVideo.currentTime = 0;//add
         }
         else{
             ly.play();
+            myVideo.play();//add
         }
     }
 }

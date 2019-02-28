@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="./../css/common.css">
     <link rel="stylesheet" type="text/css" href="./../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style-prepage.css">
+    <link rel="stylesheet" href="../css/style-background.css">
 
     <!--js-->
     <script src="./../js/jquery-3.3.1.min.js"></script>
@@ -16,80 +16,49 @@
     <script src="../js/atFault.js"></script>
 
 </head>
-<body id="body">
+<body onclick="jump()">
 <div class="top-bar">
 </div>
 <div class="title">
-    <p>乌托邦式的单工协议</p>
+    <p>背景</p>
 </div>
 <div class="content">
-    <div class="image-block-left">
-        <img src="../images/program-monkey.png" class="avatar-image-left">
+    <div class="content-side">
+        <div class="image-block">
+            <img src="../images/program-monkey.png" class="avatar-image">
+        </div>
     </div>
-    <div class="middle">
-        <img src="../images/clock.png" class="middle-image">
-        <p style="font-size: 23px;line-height: 150%">
-            "程序猿"：发送方<br>
-            "程序狗"：接收方<br>
-            "砖头"：帧<br>
-            "闹钟"：定时器<br>
-            "确认"：确认帧<br>
+    <div class="description">
+        <p id="word" style="line-height: 150%;display: none;">一个程序猿没有在大学好好学习，于是在毕业之后，他只好去搬砖。<br>他的老板规定他和他的同事程序狗必须用这些砖砌出一堵漂亮的墙，但是他发现，老板要他们在北京砌墙，但是砖头却只能在上海生产。<br>
+            这上海生产的砖头，该怎么送到北京去啊，这要是出了一点差错，墙没砌好，怕是搬砖的工作都要没得做了。<br>程序猿一边在心理咒骂着老板为什么要这么安排，一边苦苦思考应该怎么送砖才能万无一失，十分不情愿的去送砖了。<br>
         </p>
+        <p id="show"></p>
     </div>
-    <div class="image-block-right">
-        <img src="../images/program-dog.png" class="avatar-image-right">
+    <div class="image-block">
+        <img src="../images/program-dog.png" class="avatar-image">
     </div>
 </div>
-<div class="dialog-line">
-    <div class="dialog-block-monkey">
-        <img src="../images/dialog-r.png" style="height: 40vh; width: 42vw">
-        <p id="dia_mon_0" class="dialog-text-monkey">
-            由于一些原因，虽然我们身处异地，但是我需要给你送"砖头"。
-        </p>
-        <p id="dia_mon_1" class="dialog-text-monkey" hidden>
-            没错，而且可能你很难相信，但是只要出错了我们就会失业了。
-        </p>
-        <p id="dia_mon_2" class="dialog-text-monkey" hidden>
-            没关系，第一次送，有人给我们确保了一个绝对不会出错的完美"路线"，你只管放心收好传过来的"砖头"就行了。
-        </p>
-    </div>
-
-    <div class="dialog-block-dog">
-        <img src="../images/dialog.png" style="height: 40vh; width: 42vw">
-        <p id="dia_dog_0" class="dialog-text-dog" hidden>
-            what?送"砖头"???
-        </p>
-        <p id="dia_dog_1" class="dialog-text-dog" hidden>
-            好吧。但是怎么保证不会有失误啊，感觉很困难诶。
-        </p>
-    </div>
-</div>
-
 <div class="left-bar"></div>
 <div class="right-bar"></div>
 <div class="bottom-bar" id="bottom-bar"><br/></div>
 <script>
-    var flag = 0;
-    $("#body").click(function () {
-        if (flag == 0) {
-            $("#dia_dog_0").fadeIn();
-        }
-        if (flag == 1) {
-            $("#dia_mon_0").fadeOut();
-            $("#dia_mon_1").fadeIn();
-        }
-        if (flag == 2) {
-            $("#dia_dog_0").fadeOut();
-            $("#dia_dog_1").fadeIn();
-        }if (flag == 3) {
-            $("#dia_mon_1").fadeOut();
-            $("#dia_mon_2").fadeIn();
-        }if (flag == 4) {
-            window.location.replace("pre_beginning.html");
-        }
-
-        flag++;
-    })
+    function jump() {
+        window.location.replace("pre_beginning.html")
+    }
+</script>
+<script>
+    window.onload=function(){
+        var story = document.getElementById('word');
+        var s = document.getElementById('show');
+        var i = 0;
+        timer=setInterval(function(){
+            s.innerHTML=story.innerHTML.substring(0,i);
+            i++;
+            if(s.innerHTML==story.innerHTML){
+                clearInterval(timer);
+            }
+        },100);
+    }
 </script>
 </body>
 </html>

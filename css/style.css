@@ -297,6 +297,34 @@ a:active {
     height: 102px;
 }
 
+#newAffirm11{
+    width: 45px;
+    height: 45px;
+    position: relative;
+    float: left;
+    margin-left: 427px;
+    margin-top: -517px;
+}
+
+
+#newAffirm12{
+    width: 45px;
+    height: 45px;
+    position: relative;
+    float: left;
+    margin-left: 427px;
+    margin-top: -517px;
+}
+
+#newAffirm2{
+    width: 45px;
+    height: 45px;
+    position: relative;
+    float: left;
+    margin-left: 502px;
+    margin-top: -97px;
+}
+
 #newAffirm3{
     width: 45px;
     height: 45px;
@@ -316,6 +344,24 @@ a:active {
 }
 
 #newAffirm5{
+    width: 45px;
+    height: 45px;
+    position: relative;
+    float: left;
+    margin-left: 727px;
+    margin-top: -517px;
+}
+
+#newAffirm51{
+    width: 45px;
+    height: 45px;
+    position: relative;
+    float: left;
+    margin-left: 727px;
+    margin-top: -517px;
+}
+
+#newAffirm52{
     width: 45px;
     height: 45px;
     position: relative;
@@ -369,6 +415,15 @@ a:active {
     height: 102px;
 }
 
+#window0{
+    width: 82px;
+    height: 62px;
+    float: left;
+    position: relative;
+    margin-left: 331px;
+    margin-top: -105px;
+}
+
 #window1{
     width: 236px;
     height: 62px;
@@ -405,9 +460,29 @@ a:active {
     margin-top: -350px;
 }
 
+#video1{
+/*    width: 80%;*/
+/*    height: 800px;*/
+    float: left;
+    position: absolute;
+/*
+    margin-left: -210px;
+    margin-top: -600px;
+*/
+    
+}
 
-
-
+video{
+    width:80%;
+    bottom: -50%;
+    margin-top: -45%;
+    margin-bottom: 20%;
+    margin-right: 20px;
+    float: right;
+    max-width: 1345px;
+    min-width: 920px;
+    
+}
 
 
 

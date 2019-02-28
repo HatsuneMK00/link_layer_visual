@@ -19,18 +19,19 @@
     <script src="../js/dialog.js"></script>
     <script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 </head>
+<body>
 <div id="question" title="提问" style="font-size: 21px;line-height: 150%;">
     <p>动画中七号帧的确认帧丢失，当发送方收到八号帧的确认帧时，发送方的发送窗口的下界应该在几号帧的位置？<br></p>
     <form>
-        <input type="radio" id="selection1" value="我是选项1" name="ques">八号帧<br>
-        <input type="radio" id="selection2" value="我是选项2" name="ques">七号帧<br>
+        <input type="radio" id="selection1" value="我是选项1" name="ques">七号帧<br>
+        <input type="radio" id="selection2" value="我是选项2" name="ques">八号帧<br>
         <input type="radio" id="selection3" value="我是选项3" name="ques">九号帧<br><br>
     </form>
     <p id="error" style="font-size: 18px"></p>
 </div>
 <body>
 <div id="dialog_content" title="说明" style="font-size: 21px;line-height: 150%">
-    <p>在有错信道回退N协议中，三号帧在传输过程中丢失，触发计时器超时，导致发送方重传3,4,5三个帧</p>
+    <p>在回退N协议中，三号帧在传输过程中丢失，触发计时器超时，导致发送方重传3,4,5三个帧</p>
     <p>七号帧的确认帧在传输过程中丢失，但八号帧确认帧顺利到达，由于累计确认原则，认为七号帧已送达，传输正常进行。</p>
     <p>从下向上发的砖头代表“帧”，从上向下发的 √ 表示“确认帧”。</p>
     <p>右侧是传输过程的伪代码</p>
@@ -71,9 +72,13 @@
     <img id="timer0" class="timer" src="../images/quitTimer.jpg">
     <img id="timer1" class="timer" src="../images/timer.jpg">
     <img id="timer2" class="timer" src="../images/timer.jpg">
+    <img id="newAffirm11" class="affirm" src="../images/affirm.png">
+    <img id="newAffirm12" class="affirm" src="../images/affirm.png">
     <img id="newAffirm3" class="affirm" src="../images/affirm.png">
     <img id="newAffirm4" class="affirm" src="../images/affirm.png">
     <img id="newAffirm5" class="affirm" src="../images/affirm.png">
+    <img id="newAffirm51" class="affirm" src="../images/affirm.png">
+    <img id="newAffirm52" class="affirm" src="../images/affirm.png">
     <img id="newAffirm6" class="affirm" src="../images/affirm.png">
     <img id="newAffirm7" class="affirm" src="../images/affirm.png">
     <img id="newAffirm8" class="affirm" src="../images/affirm.png">
@@ -95,12 +100,11 @@
     <!--伪代码部分-->
     <div id="codetrace_r"class="panel codetrace codetrace_r">
         <p id="code11" style="padding-top: 5px;">while(等待事件){</p>
-        <p id="code12">&nbsp;&nbsp;if( 帧到达 ）</p>
-        <p id="code13">&nbsp;&nbsp;&nbsp;&nbsp;if( 该帧为期望接收的帧 )</p>
-        <p id="code14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接收该帧</p>
-        <p id="code15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将窗口下限移至第一个未接收的帧处</p>
-        <p id="code16">&nbsp;&nbsp;&nbsp;&nbsp;else 丢弃该帧</p>
-        <p id="code17"style="padding-bottom: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;发送序号为窗口下限序号-1帧的确认帧</p>
+        <p id="code12">&nbsp;&nbsp;if( 期望帧到达 ）</p>
+        <p id="code14">&nbsp;&nbsp;&nbsp;&nbsp;接收该帧 i++</p>
+        <p id="code15">&nbsp;&nbsp;&nbsp;&nbsp;将窗口下限移至第一个未接收的帧处</p>
+        <p id="code16">&nbsp;&nbsp;else if ( 到达帧不是期望帧 )丢弃该帧</p>
+        <p id="code17"style="padding-bottom: 10px;">&nbsp;&nbsp;发送序号为窗口下限序号-1帧的确认帧</p>
     </div>
     <div id="codetrace-hide_r" class="panel-hide codetrace-hide codetrace-hide_r">
         <img src="./../images/arrow_white_right.png" alt="&gt;" class="rotateRight"></div>
@@ -117,7 +121,7 @@
         <p id="code3">&nbsp;&nbsp;为每个帧设定计时器</p>
         <p id="code4">&nbsp;&nbsp;if（ 规定时间内收到期望的确认帧 )</p>
         <p id="code5">&nbsp;&nbsp;&nbsp;&nbsp;发送窗口滑动至该帧后</p>
-        <p id="code6">&nbsp;&nbsp;&nbsp;&nbsp;停止窗口外帧的计时器</p>
+        <p id="code6">&nbsp;&nbsp;&nbsp;&nbsp;停止窗口外计时器</p>
         <p id="code7">&nbsp;&nbsp;else if ( 期望帧的计时器超时 ){ </p>
         <p id="code8">&nbsp;&nbsp;&nbsp;&nbsp;重发超时帧及其后的N帧,并重设计时器</p>
         <p id="code9">&nbsp;&nbsp;else if (收到非期望确认帧)丢弃该帧</p>

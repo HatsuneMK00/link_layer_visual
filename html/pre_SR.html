@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>一位滑动窗口协议</title>
+    <title>选择重传协议</title>
     <link rel="stylesheet" type="text/css" href="./../css/common.css">
     <link rel="stylesheet" type="text/css" href="./../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -12,20 +12,19 @@
 
     <script src="./../js/common.js"></script>
     <script src="./../js/linkLayerWidget.js"></script>
-    <script src="../js/slidingWindow.js"></script>
+    <script src="../js/selective_repeat.js"></script>
 
     <link rel="stylesheet" href="../css/dialog.css">
     <link rel="stylesheet" href="../js/jquery-ui-1.12.1.custom/jquery-ui.min.css">
     <script src="../js/dialog.js"></script>
     <script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="../css/style-prepage.css">
-
 </head>
 <body id="body">
 <div class="top-bar">
 </div>
 <div class="title">
-    <p>一位滑动窗口协议</p>
+    <p>选择重传协议</p>
 </div>
 <div class="content">
     <div class="image-block-left">
@@ -49,26 +48,26 @@
     <div class="dialog-block-monkey">
         <img src="../images/dialog-r.png" style="height: 28vh; width: 30vw">
         <p id="dia_mon_0" class="dialog-text-monkey">
-            这第四次传输"砖头"，好像信道本身没有什么变化，但上级说之后会要求我们提高效率，让我们先做起准备。
+            听说这是最后一次传"砖头"了。做完这个我们就算解放了。这次上级要我们传输的效率还要再高一些才行。
         </p>
         <p id="dia_mon_1" class="dialog-text-monkey" hidden>
-            咱们换个思路，我不再每次只发送一个帧了。我会维护一个"发送窗口"，每次我只发在发送窗口里的"砖头"，而且不等你的确认帧了，你一个一个收就行。
+            不，这样没什么本质区别，不会有什么效率提升的。这样，要不你也设置个窗口，不要每次只接受一个了，不然我每次都要把发送窗口里的"砖头"全部重新发一次，太慢了。
         </p>
         <p id="dia_mon_2" class="dialog-text-monkey" hidden>
-            行，收到你的"确认"之后我再移动我的发送窗口，发之后的"砖头",在收到之前我都会等你的。
+            也就是说我只用重新发没有收到"确认"的"砖头"？感觉效率能提升了，那开始吧。
         </p>
     </div>
 
     <div class="dialog-block-dog">
         <img src="../images/dialog.png" style="height: 28vh; width: 30vw">
         <p id="dia_dog_0" class="dialog-text-dog" hidden>
-            天哪，这要怎么办，有什么办法能发的更快吗？
+            还要再高些吗？那该怎么办呢，你的发送窗口再大一些？
         </p>
         <p id="dia_dog_1" class="dialog-text-dog" hidden>
-            但是你也不要发的太快了，咱们提前商量好你的"发送窗口"的大小，不然我收不过来。这次"发送窗口"就先定为1，咱们练练手。
+            有道理。那我的接受窗口也定成三个吧。只要是在我接受窗口里的"砖头"，就算不是按顺序的，我也先收着，你就不用重新发了，只发我没收到的那个就行了。
         </p>
         <p id="dia_dog_2" class="dialog-text-dog" hidden>
-            好。那咱们就开始吧！
+            嗯。做完这个我们就回老家放假吧。
         </p>
     </div>
 </div>
@@ -96,7 +95,7 @@
             $("#dia_dog_1").fadeOut();
             $("#dia_dog_2").fadeIn();
         }if (flag == 5) {
-            window.location.replace("slidingWindow.html");
+            window.location.replace("selective_repeat.html");
         }
 
         flag++;

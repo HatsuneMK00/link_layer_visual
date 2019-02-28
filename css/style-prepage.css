@@ -66,34 +66,34 @@
     position: relative;
     height: 40vh;
     width: 40vw;
-    top: 2.7vh;
-    left: 0vw;
+    top: 9vh;
+    left: 2vw;
 }
 
 .dialog-block-dog {
     position: relative;
     height: 40vh;
     width: 40vw;
-    top: 2.7vh;
-    right: 5vw;
+    top: 9vh;
+    right: 0vw;
 }
 
 .dialog-text-monkey {
     position: absolute;
-    height: 30vh;
-    width: 30vw;
-    top: 15vh;
-    left: 7vw;
+    height: 28vh;
+    width: 28vw;
+    top: 8vh;
+    left: 1.5vw;
     font-size: 22px;
     font-weight: 300;
     line-height: 130%;
 }
 .dialog-text-dog {
     position: absolute;
-    height: 30vh;
-    width: 30vw;
-    top: 15vh;
-    left: 5.5vw;
+    height: 28vh;
+    width: 28vw;
+    top: 8vh;
+    left: 1.5vw;
     font-size: 22px;
     font-weight: 300;
     line-height: 130%;
