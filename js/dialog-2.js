@@ -22,7 +22,10 @@ $(document).ready(function () {
         height: 350,
         modal: true,
         buttons: {
-            "确定": function () {
+            "返回首页":function () {
+                window.location.replace("../html/index.html")
+            },
+            "确定&下一个": function () {
                 if (document.getElementById("selection2").checked != true) {
                     $("#error").text("wrong");
                     $("#error").css("color", "red");
@@ -42,5 +45,5 @@ function show_question() {
 }
 
 function close_dialog() {
-    $("#question").dialog("close")
+    window.location.replace("../html/pre_atFault.html")
 }
