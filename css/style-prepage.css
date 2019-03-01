@@ -48,7 +48,7 @@
 
 .middle {
     position: relative;
-    right: 0vw;
+    right: 4vw;
     width: 20vw;
     margin: 0 40px;
     bottom: 4vh;
@@ -67,7 +67,7 @@
     height: 40vh;
     width: 40vw;
     top: 9vh;
-    left: 2vw;
+    left: 4vw;
 }
 
 .dialog-block-dog {
@@ -75,7 +75,7 @@
     height: 40vh;
     width: 40vw;
     top: 9vh;
-    right: 0vw;
+    left: 3vw;
 }
 
 .dialog-text-monkey {

@@ -23,7 +23,7 @@ $(document).ready(function () {
         modal: true,
         buttons: {
             "返回首页":function () {
-                window.location.replace("../html/index.html")
+                window.location.href=("../html/index.html")
             },
             "确定&下一个": function () {
                 if (document.getElementById("selection2").checked != true) {
@@ -45,5 +45,5 @@ function show_question() {
 }
 
 function close_dialog() {
-    window.location.replace("../html/pre_atFault.html")
+    window.location.href=("../html/pre_atFault.html")
 }
