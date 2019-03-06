@@ -10,6 +10,8 @@ var linkLayerWidget = function() {
     var currentStep = 0;  //当前步
     var animInterval;  //动画间隔
     var issPlaying; //与isPlaying in viz.js区分
+    
+    
 
     this.init = function () {
         var basicState = new Array();
@@ -22,7 +24,10 @@ var linkLayerWidget = function() {
         highlightLine(stateArr[LINE]);
     }
     //乌托邦
+    var Media = document.getElementById("video");
     this.beginning = function () {
+        //add
+        
 
         basicState = new Array();
         basicState[STATUS] = '设置第一个帧的序号为 1 <br>';
@@ -61,6 +66,8 @@ var linkLayerWidget = function() {
         statelist.push(basicState);
 
         this.play();
+        /*add*/
+        Media.play();
         return true;
     }
     //无错信道
@@ -111,6 +118,8 @@ var linkLayerWidget = function() {
         statelist.push(basicState);
 
         this.play();
+        //add
+        Media.play();
         return true;
     }
     //有错停等
@@ -214,6 +223,8 @@ var linkLayerWidget = function() {
         statelist.push(basicState);
 
         this.play();
+        //add
+        Media.play();
         return true;
     }
     //滑动窗口
@@ -310,6 +321,8 @@ var linkLayerWidget = function() {
         statelist.push(basicState);
 
         this.play();
+        //add
+        Media.play();
         return true;
     }
     //回退N帧
@@ -487,6 +500,8 @@ var linkLayerWidget = function() {
         statelist.push(basicState);
 
         this.play();
+        //add
+        Media.play();
         return true;
     }
 
@@ -671,6 +686,8 @@ var linkLayerWidget = function() {
         statelist.push(basicState);
 
         this.play();
+        //add
+        Media.play();
         return true;
     }
 
@@ -734,6 +751,7 @@ var linkLayerWidget = function() {
 
     this.pause = function() {
         issPlaying = false;
+        Media.pause();
         clearInterval(animInterval);
     }
 
