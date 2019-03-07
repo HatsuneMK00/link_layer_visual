@@ -13,7 +13,7 @@
 			l: w,
 			z: o(v, "zIndex", -1),
 			o: o(v, "opacity", 0.5),
-			c: o(v, "color", "15,136,235"),
+			c: o(v, "color", "15,0,0"),
 			n: o(v, "count", 99)
 		}
 	}
@@ -74,8 +74,3 @@
 		b()
 	}, 100)
 }();
---------------------- 
-作者：zh_rey 
-来源：CSDN 
-原文：https://blog.csdn.net/zh_rey/article/details/71122885 
-版权声明：本文为博主原创文章，转载请附上博文链接！

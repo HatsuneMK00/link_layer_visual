@@ -52,10 +52,7 @@
             这第四次传输"砖头"，好像信道本身没有什么变化，但上级说之后会要求我们提高效率，让我们先做起准备。
         </p>
         <p id="dia_mon_1" class="dialog-text-monkey" hidden>
-            咱们换个思路，我不再每次只发送一个帧了。我会维护一个"发送窗口"，每次我只发在发送窗口里的"砖头"，而且不等你的确认帧了，你一个一个收就行。
-        </p>
-        <p id="dia_mon_2" class="dialog-text-monkey" hidden>
-            行，收到你的"确认"之后我再移动我的发送窗口，发之后的"砖头",在收到之前我都会等你的。
+            咱们换个思路，我不再每次只发送一个"砖头"了。<b>我会维护一个"发送窗口"，每次会把在发送窗口里的"砖头"全部发出来。</b>
         </p>
     </div>
 
@@ -65,10 +62,7 @@
             天哪，这要怎么办，有什么办法能发的更快吗？
         </p>
         <p id="dia_dog_1" class="dialog-text-dog" hidden>
-            但是你也不要发的太快了，咱们提前商量好你的"发送窗口"的大小，不然我收不过来。这次"发送窗口"就先定为1，咱们练练手。
-        </p>
-        <p id="dia_dog_2" class="dialog-text-dog" hidden>
-            好。那咱们就开始吧！
+            咱们得<b>协商决定你的"发送窗口"大小</b>，不然我收不过来。这次"发送窗口"就先定为1，咱们练练手。
         </p>
     </div>
 </div>
@@ -90,15 +84,8 @@
             $("#dia_dog_0").fadeOut();
             $("#dia_dog_1").fadeIn();
         }if (flag == 3) {
-            $("#dia_mon_1").fadeOut();
-            $("#dia_mon_2").fadeIn();
-        }if (flag == 4) {
-            $("#dia_dog_1").fadeOut();
-            $("#dia_dog_2").fadeIn();
-        }if (flag == 5) {
             window.location.href=("slidingWindow.html");
         }
-
         flag++;
     })
 </script>

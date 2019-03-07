@@ -49,26 +49,20 @@
     <div class="dialog-block-monkey">
         <img src="../images/dialog-r.png" style="height: 28vh; width: 30vw">
         <p id="dia_mon_0" class="dialog-text-monkey">
-            上级终于说要我们传输"砖头"的速度太慢了，要让我们提高效率了。
+            上级说我们传输"砖头"的速度太慢了，要让我们提高效率。
         </p>
         <p id="dia_mon_1" class="dialog-text-monkey" hidden>
-            嗯，我把窗口设置为3你看怎么样，不算慢也不算太快，你觉得怎么样？
-        </p>
-        <p id="dia_mon_2" class="dialog-text-monkey" hidden>
-            好吧。给我们这个跨世纪的方案起个名字吧。因为如果你有一个没收到，我就需要退回窗口最初的那个帧把三个帧全都重新发一遍。就叫回退N吧。
+            嗯，我把窗口设置为3你看怎么样，速度适中，怎么样？
         </p>
     </div>
 
     <div class="dialog-block-dog">
         <img src="../images/dialog.png" style="height: 28vh; width: 30vw">
         <p id="dia_dog_0" class="dialog-text-dog" hidden>
-            好。那就按照我们之前说的滑动窗口的方案来吧。
+            好。那就按照我们之前说的<b>滑动窗口的方案</b>来吧。
         </p>
         <p id="dia_dog_1" class="dialog-text-dog" hidden>
-            没问题。我还是一次只收一个，假如不是按照"砖头"的顺序到的，我就不收了，也不回发"确认"。你三个都重新发一遍吧。
-        </p>
-        <p id="dia_dog_2" class="dialog-text-dog" hidden>
-            不错，那开始吧。
+            没问题。我还是一次只收一个，<b>假如不是按照"砖头"的顺序到的，我就不收了，也不回发"确认"。</b>你三个都重新发一遍吧。
         </p>
     </div>
 </div>
@@ -90,15 +84,8 @@
             $("#dia_dog_0").fadeOut();
             $("#dia_dog_1").fadeIn();
         }if (flag == 3) {
-            $("#dia_mon_1").fadeOut();
-            $("#dia_mon_2").fadeIn();
-        }if (flag == 4) {
-            $("#dia_dog_1").fadeOut();
-            $("#dia_dog_2").fadeIn();
-        }if (flag == 5) {
             window.location.href=("rollbackN.html");
         }
-
         flag++;
     })
 </script>

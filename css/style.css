@@ -504,6 +504,7 @@ video{
     max-width: 1050px;
     min-width: 750px;
     min-height: 600px;
+    z-index: -1;
 }
 
 

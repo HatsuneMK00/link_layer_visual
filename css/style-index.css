@@ -199,3 +199,7 @@ summary:focus {
   -webkit-transform: rotate(225deg);
           transform: rotate(225deg);
 }
+
+canvas{
+  position: absolute;
+}

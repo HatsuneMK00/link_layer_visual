@@ -48,26 +48,20 @@
     <div class="dialog-block-monkey">
         <img src="../images/dialog-r.png" style="height: 28vh; width: 30vw">
         <p id="dia_mon_0" class="dialog-text-monkey">
-            听说这是最后一次传"砖头"了。做完这个我们就算解放了。这次上级要我们传输的效率还要再高一些才行。
+            听说这是最后一次传"砖头"了。这次上级要我们传输的效率还要再高一些才行。
         </p>
         <p id="dia_mon_1" class="dialog-text-monkey" hidden>
-            不，这样没什么本质区别，不会有什么效率提升的。这样，要不你也设置个窗口，不要每次只接受一个了，不然我每次都要把发送窗口里的"砖头"全部重新发一次，太慢了。
-        </p>
-        <p id="dia_mon_2" class="dialog-text-monkey" hidden>
-            也就是说我只用重新发没有收到"确认"的"砖头"？感觉效率能提升了，那开始吧。
+            嗯对，那你也<b>设置一个"接收窗口"</b>，每次接受所有在"接受窗口"内的"砖头"。
         </p>
     </div>
 
     <div class="dialog-block-dog">
         <img src="../images/dialog.png" style="height: 28vh; width: 30vw">
         <p id="dia_dog_0" class="dialog-text-dog" hidden>
-            还要再高些吗？那该怎么办呢，你的发送窗口再大一些？
+            每次出错就要重传所有"砖头"实在太慢了。
         </p>
         <p id="dia_dog_1" class="dialog-text-dog" hidden>
-            有道理。那我的接受窗口也定成三个吧。只要是在我接受窗口里的"砖头"，就算不是按顺序的，我也先收着，你就不用重新发了，只发我没收到的那个就行了。
-        </p>
-        <p id="dia_dog_2" class="dialog-text-dog" hidden>
-            嗯。做完这个我们就回老家放假吧。
+            那我的接受窗口也定成三个吧。只要是<b>在"接受窗口"里的"砖头"，就算不是按顺序的，我也会收下，只发我没收到的那个就行了。</b>
         </p>
     </div>
 </div>
@@ -89,15 +83,8 @@
             $("#dia_dog_0").fadeOut();
             $("#dia_dog_1").fadeIn();
         }if (flag == 3) {
-            $("#dia_mon_1").fadeOut();
-            $("#dia_mon_2").fadeIn();
-        }if (flag == 4) {
-            $("#dia_dog_1").fadeOut();
-            $("#dia_dog_2").fadeIn();
-        }if (flag == 5) {
             window.location.href=("selective_repeat.html");
         }
-
         flag++;
     })
 </script>
