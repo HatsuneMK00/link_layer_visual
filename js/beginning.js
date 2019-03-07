@@ -27,7 +27,6 @@ $(document).ready(function(){
 
         $("#blocks8").delay(16000);
         $("#blocks8").animate({bottom:'420px'},500);
-        setTimeout("show_question()", 20000);
 
     });
 });

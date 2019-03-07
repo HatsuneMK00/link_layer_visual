@@ -22,8 +22,12 @@ $(document).ready(function () {
         height: 350,
         modal: true,
         buttons: {
+            "再看一次": function () {
+                location.reload();
+            },
             "返回首页":function () {
-                window.location.href=("../html/index.html")
+                // alert(location.href.substring(0,location.href.lastIndexOf('/')));
+                window.location.href=("../new-index.html");
             },
             "确定&下一个": function () {
                 if (document.getElementById("selection2").checked != true) {

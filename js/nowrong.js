@@ -45,7 +45,6 @@ $(document).ready(function(){
         $("#blocks8").animate({bottom:'420px'},500);
         $("#affirm8").delay(21000).toggle(0);
         $("#affirm8").animate({top:'420px'},500);
-        setTimeout("show_question()",24000);
 
 //      $("#blocks0").animate({bottom:'420px'},500,function(){
 //          $("#blocks1").animate({bottom:'420px'},500,function(){

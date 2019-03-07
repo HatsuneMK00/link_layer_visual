@@ -24,9 +24,12 @@
 <div id="question" title="提问" style="font-size: 21px;line-height: 150%;">
     <p>这个模型与之前看到的有错信道的停等协议一样吗？<br></p>
     <form>
-        <input type="radio" id="selection1" value="我是选项1" name="ques">显然没有什么区别<br>
-        <input type="radio" id="selection2" value="我是选项2" name="ques">有区别，名字不一样<br>
-        <input type="radio" id="selection3" value="我是选项3" name="ques">有区别，这个协议将思想抽象为了滑动窗口的思想，更利于协议的进一步发展与完善<br><br>
+        <label for="selection1">A: 显然没有什么区别</label>
+        <input type="radio" id="selection1" value="我是选项1" name="ques"><br>
+        <label for="selection2">B: 有区别，名字不一样</label>
+        <input type="radio" id="selection2" value="我是选项2" name="ques"><br>
+        <label for="selection3">C: 有区别，这个协议将思想抽象为了滑动窗口的思想，更利于协议的进一步发展与完善</label>
+        <input type="radio" id="selection3" value="我是选项3" name="ques"><br><br>
     </form>
     <p id="error" style="color: red;font-size: 18px"></p>
 </div>
@@ -84,7 +87,7 @@
 
     <img id="lost" class="lost" src="../images/lost.jpg">
 -->
-    <video src="../video/sliding1.mp4" id="video" class="video"></video>
+    <video src="../video/sliding1.mp4" id="video" class="video" onended="show_question()"></video>
 
 </div>
 <div id="actions-hide" class="panel-hide"><img class="rotateRight" src="./../images/arrow_white_right.png" alt="&gt;" ></div>
@@ -148,7 +151,7 @@
         setTimeout( function() {
             if ((mode=="exploration")&&ly.SlidingWindow()) {
                 triggerRightPanels();
-                isPlaying = true;
+                $("#video").play();
             }
         }, 500);
     }

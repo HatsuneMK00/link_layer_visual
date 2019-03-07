@@ -71,8 +71,6 @@ $(document).ready(function(){
         $("#affirm8").delay(26500).toggle(0);
         $("#affirm8").animate({top:'420px'},500);
 
-        setTimeout("show_question()",29000);
-
         /***********************************add***********************************/
 //      $("#window1").queue(function () {
 //        $(this).animate({left:'100px'},1000);

@@ -22,8 +22,11 @@ $(document).ready(function () {
         height: 350,
         modal: true,
         buttons: {
-            "返回首页":function () {
-                window.location.href=("../html/index.html")
+            "再看一次": function () {
+                location.reload();
+            },
+            "返回首页": function () {
+                window.location.href = ("../new-index.html");
             },
             "确定&下一个": function () {
                 if (document.getElementById("selection2").checked != true) {
@@ -39,11 +42,13 @@ $(document).ready(function () {
         }
     })
 });
+var count_canplaythrough = 0;
 
 function show_question() {
-    $("#question").dialog("open")
+        $("#question").dialog("open")
 }
 
 function close_dialog() {
-    window.location.href=("../html/pre_nowrong.html");
+    window.location.href = ("../html/pre_nowrong.html");
 }
+

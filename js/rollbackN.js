@@ -73,7 +73,6 @@ $(document).ready(function(){
           $("#affirm8").toggle(0).animate({top:'420px'},2000);
       });
 
-      setTimeout("show_question()",24000);
      
       // $("#blocks8").delay(17600).animate({bottom:'420px'},2000,function(){
       //     $("#affirm8").toggle(0).animate({top:'420px'},2000).delay(1000).animate({bottom:'-=50px',opacity:0},500);

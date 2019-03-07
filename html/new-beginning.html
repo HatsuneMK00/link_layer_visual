@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="../css/dialog.css">
     <link rel="stylesheet" href="../js/jquery-ui-1.12.1.custom/jquery-ui.min.css">
-    <script src="../js/dialog.js"></script>
+    <script src="../js/dialog-1.js"></script>
     <script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 </head>
 <body>
@@ -41,7 +41,7 @@
 <div id="box">
     <img id="program-dog" class="program-dog" src="../images/dog.gif">
     <img id="program-monkey" class="program-monkey" src="../images/monkey.gif">
-    <div id="video1"><video id="video" src="../video/prefect.mp4"></video></div>
+    <div id="video1"><video id="video" src="../video/prefect.mp4" onended="show_question()"></video></div>
     
 
 </div>
@@ -109,7 +109,7 @@
         setTimeout( function() {
             if ((mode=="exploration")&&ly.beginning()) {
                 triggerRightPanels();
-                isPlaying = true;
+                $("#video").play();
             }
         }, 500);
     }

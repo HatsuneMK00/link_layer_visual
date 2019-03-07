@@ -24,9 +24,12 @@
 <div id="question" title="提问" style="font-size: 21px;line-height: 150%;">
     <p>选择回传协议与回退N协议相比，接收窗口大小从1变成3意味着什么？<br></p>
     <form>
-        <input type="radio" id="selection1" value="我是选项1" name="ques">没有什么变化，接收方该是什么样还是什么样<br>
-        <input type="radio" id="selection2" value="我是选项2" name="ques">有，意味着接收方需要有缓存机制了，因为它需要将不按顺序到达的帧先接受并且存下来。<br>
-        <input type="radio" id="selection3" value="我是选项3" name="ques">有，意味着接收窗口变大了！<br><br>
+        <label for="selection1">A: 没有什么变化，接收方该是什么样还是什么样</label>
+        <input type="radio" id="selection1" value="我是选项1" name="ques"><br>
+        <label for="selection2">B: 有，意味着接收方需要有缓存机制了，因为它需要将不按顺序到达的帧先接受并且存下来。</label>
+        <input type="radio" id="selection2" value="我是选项2" name="ques"><br>
+        <label for="selection3">C: 有，意味着接收窗口变大了！</label>
+        <input type="radio" id="selection3" value="我是选项3" name="ques"><br><br>
     </form>
     <p id="error" style="font-size: 18px"></p>
 </div>
@@ -160,7 +163,7 @@
         setTimeout( function() {
             if ((mode=="exploration")&&ly.selective_repeat()) {
                 triggerRightPanels();
-                isPlaying = true;
+                $("#video").play();
             }
         }, 500);
     }

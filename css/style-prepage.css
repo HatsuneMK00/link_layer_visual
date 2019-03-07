@@ -25,7 +25,7 @@
 .avatar-image-right {
     position: relative;
     height: 18vw;
-    width: 18vw;
+    width: 16vw;
 }
 
 .image-block-left {
@@ -75,7 +75,7 @@
     height: 40vh;
     width: 40vw;
     top: 9vh;
-    left: 3vw;
+    left: 2.5vw;
 }
 
 .dialog-text-monkey {

@@ -73,8 +73,6 @@ $(document).ready(function(){
       $("#blocks8").delay(18000).animate({bottom:'420px'},2000,function(){
           $("#affirm8").toggle(0).animate({top:'420px'},2000);
       });
-
-      setTimeout("show_question()", 24000);
 //      $("#newBlocks7").delay(23000).fadeIn(250).animate({bottom:'420px'},2000,function(){$("#newAffirm7").delay(250).toggle(0).animate({top:'420px'},2000);});
 
 //      $("#newBlocks8").delay(23200).fadeIn(250).animate({bottom:'420px'},2000,function(){$("#newAffirm8").delay(250).toggle(0).animate({top:'420px'},2000);});

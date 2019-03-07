@@ -74,7 +74,6 @@ $(document).ready(function(){
         $("#blocks8").animate({bottom:'420px'},500);
         $("#affirm8").delay(26500).toggle(0);
         $("#affirm8").animate({top:'420px'},500);
-        setTimeout("show_question()",29000);
 
 
         /*************************************************************************/
