@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>计网链路层模型可视化（小课堂）</title>
+    <title>计网链路层模型可视化（小课堂）总结</title>
     <!--<link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">-->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,10 +12,9 @@
 </head>
 <body>
 
-<h1>计网链路层模型可视化（小课堂）</h1>
-<p>本站为想要了解计算机网络链路层模型的一般学生，以及想要直观理解链路层模型的计算机专业学生提供一个可视化的动画展示与教学。</p>
-<p>我们将以一个虚拟的卡通故事为主线，融合动画演示，来解释每一个链路层的模型。</p>
-<p>（程序猿和程序狗因为老板的蛮横的命令，在北京的程序猿必须给在上海的程序狗送砖头过去才行，他们需要保证不出任何差错地完成任务，还需要满足老板日益增加的效率需求。）</p>
+<h1>计网链路层模型可视化（小课堂）的学习结束啦</h1>
+<p>我们的目的是为想要了解计算机网络链路层模型的一般学生，以及想要直观理解链路层模型的计算机专业学生提供一个可视化的动画展示与教学。</p>
+<p>想要了解更多、更加全面深入的计算机网络链路层各个协议的知识<a href="further_study.html">请点这里</a></p>
 
 <!--<p><input type="checkbox" id="accordion-toggle"><label for="accordion-toggle">Keep animations but remove auto-collapse effect </label></p>-->
 <canvas id="cas" style="position : absolute;z-index : -1;"></canvas>
@@ -23,7 +22,7 @@
     <details>
         <summary>乌托邦式的单工协议</summary>
         <div class="details-wrapper">
-            <div class="details-styling" onclick="navigate_1()">
+            <div class="details-styling">
                 <p>这是对于网络传输理想化的模型，认为在传输过程中，不会出现任何通信错误，即所有帧都可以不发生任何错误地按序抵达接收方。</p>
                 <p>在这种情况下，发送方只需要一个接一个的发送自己的帧，接收方只需要负责接收，不需要回传确认帧进行确认。</p>
             </div>
@@ -32,7 +31,7 @@
     <details>
         <summary>无错信道上的单工停-等协议</summary>
         <div class="details-wrapper">
-            <div class="details-styling" onclick="navigate_2()">
+            <div class="details-styling">
                 <p>这个协议在之前的理想化模型的基础上，引入了确认帧的机制。每当接收方收到一帧，就马上发送一帧确认帧用于确认。</p>
                 <p>发送方在发送一帧之后，便设定一个定时器，只有在收到确认帧的情况下，才能继续下一帧的发送，而如果没有收到确认帧，就一直等到定时器超时，然后重新发送该帧。</p>
                 <p>设置定时器是为了避免在确认帧或自己发送的帧超时的情况下，不会陷入一直在等待的死锁情况。</p>
@@ -42,7 +41,7 @@
     <details>
         <summary>有错停等</summary>
         <div class="details-wrapper">
-            <div class="details-styling" onclick="navigate_3()">
+            <div class="details-styling">
                 <p>这个协议同样是在之前的理想化模型的基础上，引入了确认帧的机制。每当接收方收到一帧，就马上发送一帧确认帧用于确认。</p>
                 <p>与上一种协议的主要区别，在于它是一个双工信道，也就是说实际情况下，接收方也可以给发送方发送数据帧，而确认帧有时可以携带在数据帧中一起发送，可以少发送一些帧</p>
             </div>
@@ -51,7 +50,7 @@
     <details>
         <summary>一位滑动窗口协议</summary>
         <div class="details-wrapper">
-            <div class="details-styling" onclick="navigate_4()">
+            <div class="details-styling">
                 <p>在有错停等的基础上，又有了进一步的改进。发送方发送所有在发送窗口中的帧，而接收方会接收所有在接收窗口的帧。双方会在传输之前对窗口大小进行协商接收窗口取决于接收方的缓存大小，发送窗口则用于控制传输速率。</p>
                 <p>在一位滑动窗口中，接收方与发送方的窗口大小均为一，这种情况与之前的有错停等基本相同，但是内在的思想不同。这种窗口的思想可以通过调整窗口大小，达到提高或控制传输效率等作用。</p>
             </div>
@@ -60,7 +59,7 @@
     <details>
         <summary>回退N协议</summary>
         <div class="details-wrapper">
-            <div class="details-styling" onclick="navigate_5()">
+            <div class="details-styling">
                 <p>在一位活动窗口的基础上进行了改进。在这种情况下，发送方的窗口大小为n(n>1)，而接收方的窗口大小为1.</p>
                 <p>发送方一次性将窗口内的帧全部发送，并在收到确认帧后可以向后移动发送窗口。接收方每接收到正确的帧，也向后移动一位接收窗口。在发送方对确认帧的处理方法中，可以使用累计确认来移动发送窗口。</p>
                 <p>之所以叫做回退N，是由于发送方对于定时器超时的处理方法导致的。因为一次会将发送窗口内的所有帧发送出去，而当正确的帧出现错误时，接收方会丢弃所有其他的帧，发送方因此在超时后需要重新将发送窗口内的所有帧全部重发一遍。</p>
@@ -70,10 +69,21 @@
     <details>
         <summary>选择回传协议</summary>
         <div class="details-wrapper">
-            <div class="details-styling" onclick="navigate_6()">
+            <div class="details-styling">
                 <p>在回退N协议的基础上进行了改进。在这种情况下，发送方的窗口大小为n(n>1)，而接收方的窗口大小为m(m>1).</p>
                 <p>发送方一次性将窗口内的帧全部发送，并在收到确认帧后可以向后移动发送窗口。接收方会接收处在接收窗口内的所有帧，当不是按照顺序到达时，会将帧缓存起来，等待所有帧按照顺序到达后再转交给网络层。</p>
                 <p>对于发送方，当发送出现错误的情况，不需要再重发所有的帧，而只需要重发出现错误的帧即可。对于接收方，由于会接收非按序到达的帧，因此不能再使用累计确认。相反，使用否定确认通知发送方重发错误的帧。</p>
+            </div>
+        </div>
+    </details>
+    <details>
+        <summary>总结</summary>
+        <div class="details-wrapper">
+            <div class="details-styling">
+                <p>计算机网络数据链路层的这六个协议是一种层层深入，不断进化的关系。从一开始的完全不考虑信道情况，不考虑差错控制，不考虑流量控制的简单理想的模型，升级为考虑了差错与流量控制的停等协议。再到后面升级为了更高效率的回退N，以及选择回传协议。</p>
+                <p>模型不断升级的原因是为了解决各种现实的问题，差错，流量控制，效率等。因此我们也从最原始的简单理想的协议开始，逐层深入，追根溯源地展示了链路层的各个协议，展示了各个协议间的区别与联系，以及它们出现的理由。</p>
+                <p>在不断解决各种现实问题，提高效率的同时，链路层的协议也逐渐变得越发的复杂。但正是因为链路层的复杂与周全，才让我们能够像现在这样无所顾虑的使用互联网等各式各样的网络协议</p>
+                <p>如果对于链路层协议还想了解的更多，或者是计算机专业学生想要哦更深入的学习，请点击本页的链接。</p>
             </div>
         </div>
     </details>
