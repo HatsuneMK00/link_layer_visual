@@ -51,3 +51,7 @@ function close_dialog() {
     $("#question").dialog("close");
     window.location.href='summary.html'
 }
+
+function show_dialog() {
+    $("#dialog_content").dialog("open")
+}

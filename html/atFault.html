@@ -54,10 +54,10 @@
         </li>
         <li id="about"><a href="#">本协议</a>
             <ul class="sub">
-                <li><a href="#">文字介绍</a></li>
+                <li><a href="3.html">文字介绍</a></li>
                 <li><a href="#">视频教学</a></li>
-                <li><a href="#">数据链路层</a></li>
-                <li><a href="#">本页面说明</a></li>
+                <li><a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82">数据链路层</a></li>
+                <li onclick="show_dialog()"><a href="#">本页面说明</a></li>
             </ul>
         </li>
 
@@ -102,7 +102,7 @@
 
     <img id="lost" class="lost" src="../images/lost.jpg">
 -->
-    <video src="../video/atFault1.mp4" id="video" class="video" onended="show_question()"></video>
+    <video src="../video/atfault3.8.mp4" id="video" class="video" onended="show_question()"></video>
 
 </div>
 
@@ -173,7 +173,8 @@
         setTimeout( function() {
             if ((mode=="exploration")&&ly.atFault()) {
                 triggerRightPanels();
-                $("#video").play();
+                // $("#video").play();
+                isPlaying=true
             }
         }, 500);
     }

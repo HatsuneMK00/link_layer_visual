@@ -54,10 +54,10 @@
         </li>
         <li id="about"><a href="#">本协议</a>
             <ul class="sub">
-                <li><a href="#">文字介绍</a></li>
+                <li><a href="5.html">文字介绍</a></li>
                 <li><a href="#">视频教学</a></li>
-                <li><a href="#">数据链路层</a></li>
-                <li><a href="#">本页面说明</a></li>
+                <li><a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82">数据链路层</a></li>
+                <li onclick="show_dialog()"><a href="#">本页面说明</a></li>
             </ul>
         </li>
 
@@ -171,7 +171,7 @@
     <span id="go-to-end" class="media-control-button" title="直接显示结束状态" onclick="goToEnd()"><img src="./../images/goToEnd.png" alt="直接显示结束状态"></span>
 </div>
 
-
+<script src="../js/linkLayerWidget.js"></script>
 <script type="text/javascript">
     var ly;
     $(function() {
@@ -184,7 +184,9 @@
         setTimeout( function() {
             if ((mode=="exploration")&&ly.rollbackN()) {
                 triggerRightPanels();
-                $("#video").play();
+                // isPlaying=true;
+                // document.getElementById("video").play()
+
             }
         }, 500);
     }

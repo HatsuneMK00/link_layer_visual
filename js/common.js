@@ -199,18 +199,18 @@ function isAtEnd(){
 }
 function pause(){
     var myVideo = document.getElementById("video");//add
-    if(isPlaying){
-        isPaused = true;
-        ly.pause();
-        myVideo.pause();//add
+    if(!myVideo.paused){
         $('#play').show();
         $('#pause').hide();
+        // isPaused = true;
+        ly.pause();
+        myVideo.pause();//add
     }
 }
 function play(){
     var myVideo = document.getElementById("video");//add
-    if(isPlaying){
-        isPaused=false;
+    if(myVideo.paused){
+        // isPaused=false;
         $('#pause').show();
         $('#play').hide();
         if(isAtEnd()){
@@ -250,8 +250,8 @@ function stop(){
     try{
         ly.stop();
     } catch(err){}
-    isPaused=false;
-    isPlaying=false;
+    // isPaused=false;
+    // isPlaying=false;
     $('#pause').show();
     $('#play').hide();
 }

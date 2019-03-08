@@ -50,3 +50,7 @@ function show_question() {
 function close_dialog() {
     window.location.href=("../html/pre_SW.html")
 }
+
+function show_dialog() {
+    $("#dialog_content").dialog("open")
+}

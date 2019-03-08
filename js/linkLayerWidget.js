@@ -769,7 +769,7 @@ var linkLayerWidget = function() {
     }
 
     this.stop = function() {
-        issPlaying = false;
+        // issPlaying = false;
         statelist = new Array(); //clear statelist
         currentStep = 0;
     }
