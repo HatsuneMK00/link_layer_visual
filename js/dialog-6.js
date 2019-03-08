@@ -28,7 +28,7 @@ $(document).ready(function () {
             "返回首页":function () {
                 window.location.href=("../new-index.html");
             },
-            "确定&下一个": function () {
+            "确定&总结": function () {
                 if (document.getElementById("selection2").checked != true) {
                     $("#error").text("wrong");
                     $("#error").css("color", "red");
@@ -48,5 +48,6 @@ function show_question() {
 }
 
 function close_dialog() {
-    $("#question").dialog("close")
+    $("#question").dialog("close");
+    window.location.href='summary.html'
 }

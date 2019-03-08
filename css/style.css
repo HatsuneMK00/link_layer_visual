@@ -1,38 +1,10 @@
-a{
-    /*background-color:black;*/
-    top:694px;
-    left: 650px;
-    position: absolute;
-    float: left;
-    font-size: 17px;
-    color: white;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration:underline;
-    color:rgb(107, 107, 247);
-}
-a:active {
-    text-decoration:none;
-    color:rgb(250, 250, 103);
-} 
-
-/* img{
-    width: 30px;
-    height: 30px;
-    top:690px;
-    left: 610px;
-    position: absolute;
-} */
-
 
 #box{
     width: 80%;
     height: 100%;
     background-color: rgb(233,233,233);
-    text-align:center; 
-    float: left; 
+    text-align:center;
+    float: left;
     margin-left: 30px;
     border:0;
     padding:0;
@@ -285,7 +257,7 @@ a:active {
     margin-left: 485px;
     margin-top: -120px;
     width: 80px;
-    height: 102px; 
+    height: 102px;
 }
 
 #newBlocks6{
@@ -403,7 +375,7 @@ a:active {
     margin-left: 560px;
     margin-top: -120px;
     width: 80px;
-    height: 102px; 
+    height: 102px;
 }
 
 #newBlocks4{
@@ -468,7 +440,7 @@ a:active {
     position: absolute;
     margin-left: -210px;
     margin-top: -600px;
-    
+
 }
 
 video{
@@ -480,7 +452,7 @@ video{
     float: right;
     max-width: 1345px;
     min-width: 920px;
-    
+
 }
 */
 
@@ -491,16 +463,17 @@ video{
     position: relative;
     float: left;
     margin-left: 20px;
-    max-width: 1100px;  
+    max-width: 1100px;
 }
 */
 
 video{
     position: absolute;
     left: 5%;
-    top: -2%; 
+    top: -2%;
     width: 70%;
     height: 100%;
+    /*    margin-top: 1%;*/
     max-width: 1050px;
     min-width: 750px;
     min-height: 600px;
