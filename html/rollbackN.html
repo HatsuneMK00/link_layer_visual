@@ -43,7 +43,7 @@
 <div class="navBar">
     <ul class="nav">
         <li><a href="#">首页</a></li>
-        <li id="about"><a id="others" href="#" >其他协议</a>
+        <li id="about1"><a id="others" href="#" >其他协议</a>
             <ul class="sub">
                 <li><a href="../html/beginning.html">乌托邦式协议</a></li>
                 <li><a href="../html/nowrong.html">无错停等协议</a></li>
@@ -120,7 +120,7 @@
 <div id="actions" class="panel">
     <p id="rollbackN" onclick=rollbackN()>创建</p>
 </div>
-<!--<div id="actions-hide" class="panel-hide"><img class="rotateRight" src="./../images/arrow_white_right.png" alt="&gt;" ></div>-->
+<div id="actions-hide" class="panel-hide"><img class="rotateRight" src="./../images/arrow_white_right.png" alt="&gt;" ></div>
 
 <!--<div class="receive">-->
     <!--<div id="status_r" class="panel status status_r"><p></p></div>-->
@@ -184,7 +184,7 @@
         setTimeout( function() {
             if ((mode=="exploration")&&ly.rollbackN()) {
                 triggerRightPanels();
-                // isPlaying=true;
+                isPlaying=true;
                 // document.getElementById("video").play()
 
             }

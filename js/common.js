@@ -5,6 +5,7 @@ var colourTheFourth = "#d9513c";
 
 var actionsWidth = 50;
 var statusCodetraceWidth = 300;
+// var flag = 1;
 
 var isPlaying = false;
 //Opening and closing panels
@@ -193,49 +194,62 @@ function highlightLine(lineNumbers,lineNumbers_r) {
 }
 
 var isPaused=false;
+var Previous_operation = "play";
 
 function isAtEnd(){
     return(ly.getCurrentIteration()==(ly.getTotalIteration()-1));
 }
 function pause(){
-    var myVideo = document.getElementById("video");//add
-    if(!myVideo.paused){
+    var myVideo = $('#video');//add
+    if(isPlaying){
+        isPaused = true;
+        ly.pause();
+        myVideo[0].pause();//add
         $('#play').show();
         $('#pause').hide();
-        // isPaused = true;
-        ly.pause();
-        myVideo.pause();//add
     }
 }
 function play(){
-    var myVideo = document.getElementById("video");//add
-    if(myVideo.paused){
-        // isPaused=false;
+    var myVideo = $('#video');//add
+    if(isPlaying){
+        isPaused=false;
         $('#pause').show();
         $('#play').hide();
         if(isAtEnd()){
             ly.replay();
-            myVideo.currentTime = 0;//add
+            myVideo[0].currentTime =0;//add
         }
         else{
             ly.play();
-            myVideo.play();//add
+            myVideo[0].play();//add
         }
     }
 }
 function stepForward(){
+    var myVideo = $('#video');//add
+    myVideo[0].currentTime+=0.5;
     if(isPlaying){
-        pause();
+        isPaused = true;
+        ly.pause();
+        myVideo[0].pause();//add
+        $('#play').show();
+        $('#pause').hide();
+
         ly.forceNext(250);
     }
 }
 function stepBackward(){
+    var myVideo = $('#video');//add
+    myVideo[0].currentTime-=0.5;
     if(isPlaying){
         pause();
+        myVideo[0].pause();//add
         ly.forcePrevious(250);
     }
 }
 function goToBeginning(){
+    var myVideo = $('#video');//add
+    myVideo[0].currentTime =0;
     if(isPlaying){ly.jumpToIteration(0,0);
         pause();
     }

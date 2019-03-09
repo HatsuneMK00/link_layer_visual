@@ -64,6 +64,18 @@ var linkLayerWidget = function() {
         basicState[STATUS_r] = '接收成功! <br>';
         basicState[LINE] = [];
         statelist.push(basicState);
+        basicState = new Array();
+        basicState[STATUS] = '传输成功！';
+        basicState[STATUS_r] = '接收成功! <br>';
+        basicState[LINE] = [];
+        statelist.push(basicState);
+
+        basicState = new Array();
+        basicState[STATUS] = '传输成功！';
+        basicState[STATUS_r] = '接收成功! <br>';
+        basicState[LINE] = [];
+        statelist.push(basicState);
+
 
         this.play();
         /*add*/
@@ -111,6 +123,17 @@ var linkLayerWidget = function() {
                 statelist.push(basicState);
             }
         }
+        basicState = new Array();
+        basicState[STATUS] = '传输成功！';
+        basicState[STATUS_r] = '接收成功! <br>';
+        basicState[LINE] = [];
+        statelist.push(basicState);
+        basicState = new Array();
+        basicState[STATUS] = '传输成功！';
+        basicState[STATUS_r] = '接收成功! <br>';
+        basicState[LINE] = [];
+        statelist.push(basicState);
+
         basicState = new Array();
         basicState[STATUS] = '传输成功！';
         basicState[STATUS_r] = '接收成功! <br>';
@@ -222,6 +245,18 @@ var linkLayerWidget = function() {
         basicState[LINE] = [];
         statelist.push(basicState);
 
+        basicState = new Array();
+        basicState[STATUS] = '传输成功！';
+        basicState[STATUS_r] = '接收成功! <br>';
+        basicState[LINE] = [];
+        statelist.push(basicState);
+
+        basicState = new Array();
+        basicState[STATUS] = '传输成功！';
+        basicState[STATUS_r] = '接收成功! <br>';
+        basicState[LINE] = [];
+        statelist.push(basicState);
+
         this.play();
         //add
         Media.play();
@@ -314,6 +349,17 @@ var linkLayerWidget = function() {
                 statelist.push(basicState);
             }
         }
+        basicState = new Array();
+        basicState[STATUS] = '传输成功！';
+        basicState[STATUS_r] = '接收成功! <br>';
+        basicState[LINE] = [];
+        statelist.push(basicState);
+        basicState = new Array();
+        basicState[STATUS] = '传输成功！';
+        basicState[STATUS_r] = '接收成功! <br>';
+        basicState[LINE] = [];
+        statelist.push(basicState);
+
         basicState = new Array();
         basicState[STATUS] = '传输成功！';
         basicState[STATUS_r] = '接收成功! <br>';
@@ -491,6 +537,17 @@ var linkLayerWidget = function() {
         basicState = new Array();
         basicState[STATUS] = '收到期望确认帧 9,滑动窗口<br>';
         basicState[LINE] = [4,5,6,11];
+        statelist.push(basicState);
+
+        basicState = new Array();
+        basicState[STATUS] = '传输成功！';
+        basicState[STATUS_r] = '接收成功! <br>';
+        basicState[LINE] = [];
+        statelist.push(basicState);
+        basicState = new Array();
+        basicState[STATUS] = '传输成功！';
+        basicState[STATUS_r] = '接收成功! <br>';
+        basicState[LINE] = [];
         statelist.push(basicState);
 
         basicState = new Array();
@@ -677,6 +734,17 @@ var linkLayerWidget = function() {
         basicState = new Array();
         basicState[STATUS] = '收到期望确认帧 9,滑动窗口<br>';
         basicState[LINE] = [4,5,6,11];
+        statelist.push(basicState);
+
+        basicState = new Array();
+        basicState[STATUS] = '传输成功！';
+        basicState[STATUS_r] = '接收成功! <br>';
+        basicState[LINE] = [];
+        statelist.push(basicState);
+        basicState = new Array();
+        basicState[STATUS] = '传输成功！';
+        basicState[STATUS_r] = '接收成功! <br>';
+        basicState[LINE] = [];
         statelist.push(basicState);
 
         basicState = new Array();

@@ -43,7 +43,7 @@
 <div class="navBar">
     <ul class="nav">
         <li><a href="#">首页</a></li>
-        <li id="about"><a id="others" href="#" >其他协议</a>
+        <li id="about1"><a id="others" href="#" >其他协议</a>
             <ul class="sub">
                 <li><a href="../html/beginning.html">乌托邦式协议</a></li>
                 <li><a href="../html/nowrong.html">无错停等协议</a></li>
@@ -111,42 +111,42 @@
 </div>
 <div id="actions-hide" class="panel-hide"><img class="rotateRight" src="./../images/arrow_white_right.png" alt="&gt;" ></div>
 
-<div class="receive">
-    <div id="status_r" class="panel status status_r"><p>接收成功！</p></div>
-    <div id="status-hide_r" class="panel-hide status-hide status-hide_r"><img src="./../images/arrow_black_right.png" alt="&gt;" class="rotateRight"></div>
-    <!--伪代码部分-->
-    <div id="codetrace_r"class="panel codetrace codetrace_r">
-        <p id="code11" style="padding-top: 10px;">第一个确认帧的序号为 i = 1</p>
-        <p id="code12">while(等待帧){</p>
-        <p id="code13">&nbsp;&nbsp;if( 帧到达 ）</p>
-        <p id="code14">&nbsp;&nbsp;&nbsp;&nbsp;if( 该帧序号为 i )</p>
-        <p id="code15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接收该帧传给网络层</p>
-        <p id="code16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;确认帧的序号 i ++</p>
-        <p id="code17">&nbsp;&nbsp;&nbsp;&nbsp;回送最后接收的确认帧给发送方</p>
-        <p id="code18"style="padding-bottom: 10px;">}</p>
-    </div>
-    <div id="codetrace-hide_r" class="panel-hide codetrace-hide codetrace-hide_r">
-        <img src="./../images/arrow_white_right.png" alt="&gt;" class="rotateRight"></div>
-</div>
+<!--<div class="receive">-->
+    <!--<div id="status_r" class="panel status status_r"><p>接收成功！</p></div>-->
+    <!--<div id="status-hide_r" class="panel-hide status-hide status-hide_r"><img src="./../images/arrow_black_right.png" alt="&gt;" class="rotateRight"></div>-->
+    <!--&lt;!&ndash;伪代码部分&ndash;&gt;-->
+    <!--<div id="codetrace_r"class="panel codetrace codetrace_r">-->
+        <!--<p id="code11" style="padding-top: 10px;">第一个确认帧的序号为 i = 1</p>-->
+        <!--<p id="code12">while(等待帧){</p>-->
+        <!--<p id="code13">&nbsp;&nbsp;if( 帧到达 ）</p>-->
+        <!--<p id="code14">&nbsp;&nbsp;&nbsp;&nbsp;if( 该帧序号为 i )</p>-->
+        <!--<p id="code15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接收该帧传给网络层</p>-->
+        <!--<p id="code16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;确认帧的序号 i ++</p>-->
+        <!--<p id="code17">&nbsp;&nbsp;&nbsp;&nbsp;回送最后接收的确认帧给发送方</p>-->
+        <!--<p id="code18"style="padding-bottom: 10px;">}</p>-->
+    <!--</div>-->
+    <!--<div id="codetrace-hide_r" class="panel-hide codetrace-hide codetrace-hide_r">-->
+        <!--<img src="./../images/arrow_white_right.png" alt="&gt;" class="rotateRight"></div>-->
+<!--</div>-->
+<!---->
 
-
-<div class="send">
-    <div id="status" class="panel status status_s"><p></p></div>
-    <div id="status-hide" class="panel-hide status-hide status-hide_s"><img src="./../images/arrow_black_right.png"></div>
-    <!--伪代码部分-->
-    <div id="codetrace" class="panel codetrace codetrace_s">
-        <p id="code1" style="padding-top: 10px;">第一个帧的序号为 i = 1</p>
-        <p id="code2" >do{</p>
-        <p id="code3">&nbsp;&nbsp;发送一个帧</p>
-        <p id="code4">&nbsp;&nbsp;设置计时器</p>
-        <p id="code5">&nbsp;&nbsp;if（ 规定时间内收到序号为 i 的确认帧 )</p>
-        <p id="code6">&nbsp;&nbsp;&nbsp;&nbsp;帧的序号++</p>
-        <p id="code7">&nbsp;&nbsp;清空计时器</p>
-        <p id="code8">}while ( 还需继续发送帧 )</p>
-    </div>
-    <div id="codetrace-hide" class="panel-hide codetrace-hide codetrace-hide_s">
-        <img src="./../images/arrow_white_right.png"></div>
-</div>
+<!--<div class="send">-->
+    <!--<div id="status" class="panel status status_s"><p></p></div>-->
+    <!--<div id="status-hide" class="panel-hide status-hide status-hide_s"><img src="./../images/arrow_black_right.png"></div>-->
+    <!--&lt;!&ndash;伪代码部分&ndash;&gt;-->
+    <!--<div id="codetrace" class="panel codetrace codetrace_s">-->
+        <!--<p id="code1" style="padding-top: 10px;">第一个帧的序号为 i = 1</p>-->
+        <!--<p id="code2" >do{</p>-->
+        <!--<p id="code3">&nbsp;&nbsp;发送一个帧</p>-->
+        <!--<p id="code4">&nbsp;&nbsp;设置计时器</p>-->
+        <!--<p id="code5">&nbsp;&nbsp;if（ 规定时间内收到序号为 i 的确认帧 )</p>-->
+        <!--<p id="code6">&nbsp;&nbsp;&nbsp;&nbsp;帧的序号++</p>-->
+        <!--<p id="code7">&nbsp;&nbsp;清空计时器</p>-->
+        <!--<p id="code8">}while ( 还需继续发送帧 )</p>-->
+    <!--</div>-->
+    <!--<div id="codetrace-hide" class="panel-hide codetrace-hide codetrace-hide_s">-->
+        <!--<img src="./../images/arrow_white_right.png"></div>-->
+<!--</div>-->
 
 <div class="left-bar"></div>
 <div class="right-bar"></div>
@@ -174,7 +174,7 @@
             if ((mode=="exploration")&&ly.atFault()) {
                 triggerRightPanels();
                 // $("#video").play();
-                isPlaying=true
+                isPlaying=true;
             }
         }, 500);
     }
