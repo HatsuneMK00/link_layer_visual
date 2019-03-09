@@ -3,9 +3,9 @@ $(document).ready(function () {
         dialogClass: "no-close",
         autoOpen: true,
         maxWidth: 800,
-        maxHeight: 350,
+        maxHeight: 400,
         width: 800,
-        height: 350,
+        height: 400,
         modal: true,
         buttons: {
             "OK": function () {
