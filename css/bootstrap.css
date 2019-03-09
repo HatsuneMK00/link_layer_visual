@@ -13,6 +13,7 @@ h1 {
 }
 
 .left-bar {
+    display: inline-block;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -23,6 +24,7 @@ h1 {
 }
 
 .right-bar {
+    display: inline-block;
     position: fixed;
     top: 0px;
     right: 0px;

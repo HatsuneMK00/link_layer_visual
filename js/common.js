@@ -237,6 +237,9 @@ function stepForward(){
 
         ly.forceNext(250);
     }
+    if(isAtEnd()){
+        show_question();
+    }
 }
 function stepBackward(){
     var myVideo = $('#video');//add
@@ -268,4 +271,8 @@ function stop(){
     // isPlaying=false;
     $('#pause').show();
     $('#play').hide();
+}
+
+function show_question() {
+    $("#question").dialog("open")
 }
