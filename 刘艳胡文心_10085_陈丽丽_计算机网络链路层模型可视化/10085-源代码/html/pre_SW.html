@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一位滑动窗口协议</title>
+    <link rel="stylesheet" type="text/css" href="./../css/common.css">
+    <link rel="stylesheet" type="text/css" href="./../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!--js-->
+    <script src="./../js/jquery-3.3.1.min.js"></script>
+
+    <script src="./../js/common.js"></script>
+    <script src="./../js/linkLayerWidget.js"></script>
+    <script src="../js/slidingWindow.js"></script>
+
+    <link rel="stylesheet" href="../css/dialog.css">
+    <link rel="stylesheet" href="../js/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../js/dialog.js"></script>
+    <script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../css/style-prepage.css">
+
+</head>
+<body id="body">
+<div class="top-bar">
+</div>
+<div class="title">
+    <p>一位滑动窗口协议</p>
+</div>
+<div class="content">
+    <div class="image-block-left">
+        <img src="../images/monkey.gif" class="avatar-image-left">
+    </div>
+    <div class="middle">
+        <img src="../images/clock.png" class="middle-image">
+        <p style="font-size: 23px;line-height: 150%">
+            "程序猿"：发送方<br>
+            "程序狗"：接收方<br>
+            "砖头"：帧<br>
+            "闹钟"：定时器<br>
+            "确认"：确认帧<br>
+        </p>
+    </div>
+    <div class="image-block-right">
+        <img src="../images/dog.gif" class="avatar-image-right">
+    </div>
+</div>
+<div class="dialog-line">
+    <div class="dialog-block-monkey">
+        <img src="../images/dialog-r.png" style="height: 28vh; width: 30vw">
+        <p id="dia_mon_0" class="dialog-text-monkey">
+            这第四次传输"砖头"，好像信道本身没有什么变化，但上级说之后会要求我们提高效率，让我们先做起准备。
+        </p>
+        <p id="dia_mon_1" class="dialog-text-monkey" hidden>
+            咱们换个思路，我不再每次只发送一个"砖头"了。<b>我会维护一个"发送窗口"，每次会把在发送窗口里的"砖头"全部发出来。</b>
+        </p>
+    </div>
+
+    <div class="dialog-block-dog">
+        <img src="../images/dialog.png" style="height: 28vh; width: 30vw">
+        <p id="dia_dog_0" class="dialog-text-dog" hidden>
+            天哪，这要怎么办，有什么办法能发的更快吗？
+        </p>
+        <p id="dia_dog_1" class="dialog-text-dog" hidden>
+            咱们得<b>协商决定你的"发送窗口"大小</b>，不然我收不过来。这次"发送窗口"就先定为1，咱们练练手。
+        </p>
+    </div>
+</div>
+
+<div class="left-bar"></div>
+<div class="right-bar"></div>
+<div class="bottom-bar" id="bottom-bar"><br/></div>
+<script>
+    var flag = 0;
+    $("#body").click(function () {
+        if (flag == 0) {
+            $("#dia_dog_0").fadeIn();
+        }
+        if (flag == 1) {
+            $("#dia_mon_0").fadeOut();
+            $("#dia_mon_1").fadeIn();
+        }
+        if (flag == 2) {
+            $("#dia_dog_0").fadeOut();
+            $("#dia_dog_1").fadeIn();
+        }if (flag == 3) {
+            window.location.href=("slidingWindow.html");
+        }
+        flag++;
+    })
+</script>
+</body>
+</html>

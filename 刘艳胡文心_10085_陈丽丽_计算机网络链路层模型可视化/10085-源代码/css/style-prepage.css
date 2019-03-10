@@ -1,0 +1,105 @@
+.title {
+    width: 91%;
+    height: 10vh;
+    padding-top: 6vh;
+    padding-bottom: 0vh;
+    padding-left: 8vw;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.content {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    height: 28vh;
+    justify-content: space-around;
+}
+
+.avatar-image-left {
+    position: relative;
+    height: 18vw;
+    width: 18vw;
+}
+
+.avatar-image-right {
+    position: relative;
+    height: 18vw;
+    width: 16vw;
+}
+
+.image-block-left {
+    position: relative;
+    right: 0vw;
+    height: 18vw;
+    width: 18vw;
+    margin: 0 40px;
+    top: 0vw;
+}
+
+.image-block-right {
+    position: relative;
+    right: 6vw;
+    height: 18vw;
+    width: 18vw;
+    margin: 0 40px;
+    top: 0vw;
+}
+
+.middle {
+    position: relative;
+    right: 4vw;
+    width: 20vw;
+    margin: 0 40px;
+    bottom: 4vh;
+}
+
+.middle-image {
+    position: relative;
+    left: 5.5vw;
+    height: 18vh;
+    width: 18vh;
+    margin-bottom: 2vh;
+}
+
+.dialog-block-monkey {
+    position: relative;
+    height: 40vh;
+    width: 40vw;
+    top: 9vh;
+    left: 4vw;
+}
+
+.dialog-block-dog {
+    position: relative;
+    height: 40vh;
+    width: 40vw;
+    top: 9vh;
+    left: 2.5vw;
+}
+
+.dialog-text-monkey {
+    position: absolute;
+    height: 28vh;
+    width: 28vw;
+    top: 8vh;
+    left: 1.5vw;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 130%;
+}
+.dialog-text-dog {
+    position: absolute;
+    height: 28vh;
+    width: 28vw;
+    top: 8vh;
+    left: 1.5vw;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 130%;
+}
+
+.dialog-line {
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>乌托邦式的单工协议</title>
+    <link rel="stylesheet" type="text/css" href="./../css/common.css">
+    <link rel="stylesheet" type="text/css" href="./../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-prepage.css">
+
+    <!--js-->
+    <script src="./../js/jquery-3.3.1.min.js"></script>
+
+    <script src="./../js/common.js"></script>
+    <script src="./../js/linkLayerWidget.js"></script>
+    <script src="../js/atFault.js"></script>
+
+</head>
+<body id="body">
+<div class="top-bar">
+</div>
+<div class="title">
+    <p>乌托邦式的单工协议</p>
+</div>
+<div class="content">
+    <div class="image-block-left">
+        <img src="../images/monkey.gif" class="avatar-image-left">
+    </div>
+    <div class="middle">
+        <img src="../images/clock.png" class="middle-image">
+        <p style="font-size: 23px;line-height: 150%">
+            "程序猿"：发送方<br>
+            "程序狗"：接收方<br>
+            "砖头"：帧<br>
+            "闹钟"：定时器<br>
+            "确认"：确认帧<br>
+        </p>
+    </div>
+    <div class="image-block-right">
+        <img src="../images/dog.gif" class="avatar-image-right">
+    </div>
+</div>
+<div class="dialog-line">
+    <div class="dialog-block-monkey">
+        <img src="../images/dialog-r.png" style="height: 28vh; width: 30vw">
+        <p id="dia_mon_0" class="dialog-text-monkey">
+            由于一些原因，虽然我们身处异地，但是我需要给你送"砖头"。
+        </p>
+        <p id="dia_mon_1" class="dialog-text-monkey" hidden>
+            没错，而且可能你很难相信，但是只要出错了我们就要失业了。
+        </p>
+        <p id="dia_mon_2" class="dialog-text-monkey" hidden>
+            没关系，<b>第一次送，有人给我们确保了一个绝对不会出错的完美"路线"，你只管放心收好传过来的"砖头"就行了。</b>
+        </p>
+    </div>
+
+    <div class="dialog-block-dog">
+        <img src="../images/dialog.png" style="height: 28vh; width: 30vw">
+        <p id="dia_dog_0" class="dialog-text-dog" hidden>
+            what?送"砖头"???
+        </p>
+        <p id="dia_dog_1" class="dialog-text-dog" hidden>
+            好吧。但是怎么保证不会有失误啊，感觉很困难诶。
+        </p>
+    </div>
+</div>
+
+<div class="left-bar"></div>
+<div class="right-bar"></div>
+<div class="bottom-bar" id="bottom-bar"><br/></div>
+<script>
+    var flag = 0;
+    $("#body").click(function () {
+        if (flag == 0) {
+            $("#dia_dog_0").fadeIn();
+        }
+        if (flag == 1) {
+            $("#dia_mon_0").fadeOut();
+            $("#dia_mon_1").fadeIn();
+        }
+        if (flag == 2) {
+            $("#dia_dog_0").fadeOut();
+            $("#dia_dog_1").fadeIn();
+        }if (flag == 3) {
+            $("#dia_mon_1").fadeOut();
+            $("#dia_mon_2").fadeIn();
+        }if (flag == 4) {
+            window.location.href="beginning.html";
+        }
+
+        flag++;
+    })
+</script>
+</body>
+</html>
